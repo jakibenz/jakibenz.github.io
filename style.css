@@ -5,33 +5,6 @@ html, body {
 	font-family: 'Montserrat', sans-serif;
 }
 
-/*Background Full page Intro*/
-/*Masking and ustify*/
-/*==================================*/
-.intro-page {
-	background: url(https://images.unsplash.com/photo-1510414842594-a61c69b5ae57?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=04c27a9ea6ed87838d712ae831afa974&auto=format&fit=crop&w=1350&q=80) no-repeat center center fixed;
-  	background-size: cover; 
-  	overflow: hidden;
-    height: 100%;
-    width: 100%;
-    color: white;
-    margin-bottom: 4em;
-}
-
-.intro-page .mask {
-	position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    overflow: hidden;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.4);
-    /*background-attachment: fixed; */
-}
-
-
 /*Navbar*/
 /*==================================*/
 nav .container-fluid{
@@ -41,134 +14,1064 @@ nav .container-fluid{
 	padding: 15px 0px;
 	flex-wrap: nowrap;
 }
-.tab-pane {
-	color: white;
-}
 .nav-item .nav-link {
 	color: #CCD4D4;
 	font-size: 110%
 }
-.book {
-	padding-right: 10px;
-}
-.book .nav-link {
-	color: white;
-}
 .nav-pills .nav-item .active {
-background-color: rgba(80, 84, 100, 0.7);
+    background-color: rgba(158, 177, 169, 0.7); /* Updated Sage Green */
 }
 
+/* Cleaned CSS starts here */
 
-/*Tab Cotents Carousel*/
-/*==================================*/
-.border-0{
-	box-shadow: 0px 0px 10px 2px #7f7f7f;
-	margin-top: 30px;
-
-}
-.carousel-item img {
-	height: 60vh;
-	width: 60vw;
-
-	/*for specific width and height responsive*/
-/*	width: 100%;
-    max-width: 1080px;
-    max-height: 640px;
-    height: auto;*/
-
-	background-size: cover;
-    background-repeat: no-repeat;
-    /*background-position: 50% 50%;*/
-}
-.carousel-caption {
-    top: 0;
-    padding-top: 15px;
-    bottom: auto;
-}
-.rounded {
-		border-radius: 22px !important;
-}
-/*Tab Cotents Carousel*/
-
-/*Button Subscribe and Brand*/
-/*==================================*/
-.clear >.btn {
-	font-size: 20px;
-	font-weight: 700;
-	border-radius: 50px;
-	font-family: 'Montserrat', sans-serif;
-	margin-top: 50px;
-}
-.brand {
-	font-size: 80px;
-}
-/* MARKETING CONTENT
-/*==================================*/
-
-/* Center align the text within the three columns below the carousel */
-.marketing .col-lg-4 {
-  margin-bottom: 1.5rem;
-  text-align: center;
-}
-.marketing h2 {
-  font-weight: 400;
-}
-.marketing .col-lg-4 p {
-  margin-right: .75rem;
-  margin-left: .75rem;
+/* Navbar */
+nav {
+    margin-top: 1rem;
 }
 
-/* Featurettes
-/*==================================*/
-
-.featurette-divider {
-  margin: 5rem 0; /* Space out the Bootstrap <hr> more */
+nav a {
+    text-decoration: none;
+    color: #ffffff; /* White text */
+    margin: 0 1rem;
+    font-weight: normal;
+    font-family: 'Lora', serif; /* Elegant serif font for navigation */
+    transition: color 0.3s ease;
 }
 
-/* Thin out the marketing headings */
-.featurette-heading {
-  font-weight: 300;
-  line-height: 1;
-  letter-spacing: -.05rem;
+nav a:hover {
+    color: #bf7e7e; /* Changed from cream to blush pink */
 }
 
-/*FOOTER
-/*==================================*/
-.footer {
-/*	display: flex;
-	justify-content: center;
-	align-items: flex-end;*/
-	margin: 0px 0px;
+/* Header */
+header {
+    background: #9eb1a9; /* Retain only the background color */
+    color: #ffffff;
+    text-align: center;
+    padding: 0;
+    position: relative;
+    height: 100vh; /* Full-page height */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 0;
+}
+
+@font-face {
+    font-family: 'Safira March';
+    src: url('./fonts/Safira-March-Personal-Use-Only.ttf') format('truetype'); /* Ensure the path is correct */
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'EDLavonia';
+    src: url('./fonts/EDLavonia-Regular.ttf') format('truetype'); /* Ensure the path is correct */
+    font-weight: normal;
+    font-style: normal;
+}
+
+header h1, header h2, header h3 {
+    font-family: 'Safira March', cursive; /* Apply Safira March font */
+    color: #ffffff;
+    margin: 0.5rem 0;
+}
+
+header h1 {
+    font-family: 'EDLavonia', regular; /* Elegant calligraphy font */
+    font-size: 2.5rem; /* Smaller font size */
+    color: #ffffff;
+    margin: 0.5rem 0;
+}
+
+header h2 {
+    font-size: 7rem; /* Increased font size for "Kenji & Tricia" */
+    color: #ffffff;
+    margin: 0.5rem 0;
+}
+
+header h3 {
+    font-size: 2.5rem; /* Adjust font size for "October 3, 2025" */
+}
+
+header::after {
+    content: '';
+    position: absolute;
     bottom: 0;
+    left: 0;
     width: 100%;
-    height: 60px;
-    line-height: 60px;
-	background-color: #ECECE3;
-}
-footer p {
-	margin-bottom: 0;
-	margin-left: 50px;
-	margin-right: 50px;
+    height: 20px;
+    background: #9eb1a9;
+    z-index: 1;
 }
 
-/* RESPONSIVE CSS
+/* Welcome Section */
+.welcome {
+    background: #9eb1a9; /* Retain only the background color */
+    color: #ffffff;
+    padding: 3rem 1rem;
+    border-radius: 0 0 8px 8px;
+    margin-top: 0;
+    position: relative;
+    z-index: 0;
+}
+
+.welcome p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+    transition: all 0.5s ease;
+}
+
+blockquote {
+    font-style: italic;
+    color: #f7f4e9;
+    border-left: 4px solid #ffffff;
+    padding-left: 10px;
+    margin: 20px 0;
+    transition: all 0.5s ease;
+}
+
+/* Details Section */
+.details {
+    background: #f7f4e9; /* Retain only the background color */
+    color: #506369;
+    padding: 2rem 1rem;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.details p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+    color: #506369;
+}
+
+.details h2::after {
+    background: #bf7e7e;
+}
+
+/* Attire Section */
+.attire {
+    background: #f7f4e9; /* Retain only the background color */
+    color: #506369;
+    padding: 2rem 1rem;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.attire h2::after {
+    background: #bf7e7e;
+}
+
+.attire-subheading {
+    font-family: 'EDLavonia' , regular;
+    font-size: 2rem;
+    color: #bf7e7e;
+    margin: 1.5rem auto;
+}
+
+.color-samples {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.color-sample {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.color-sample:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* RSVP Section */
+.rsvp {
+    background: #9eb1a9; /* Retain only the background color */
+    color: #ffffff;
+    padding: 2rem 1rem;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.rsvp .button {
+    font-size: 1.1rem;
+    padding: 0.75rem 2rem;
+}
+
+.rsvp-button {
+    font-family: 'Lora', serif;
+    font-size: 1.2rem;
+    padding: 0.75rem 2rem;
+    background: #ffffff; /* White background */
+    color: #9eb1a9; /* Sage green text */
+    border: 2px solid #9eb1a9; /* Sage green border */
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.rsvp-button:hover {
+    background: #9eb1a9; /* Sage green background */
+    color: #ffffff; /* White text */
+    transform: translateY(-3px); /* Slight lift effect */
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15); /* Enhanced shadow */
+}
+
+/* Gallery Section */
+.gallery {
+    background: #f7f4e9; /* Retain only the background color */
+    padding: 2rem 1rem;
+    border-radius: 8px;
+}
+
+.gallery-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.gallery img {
+    width: 100%;
+    max-width: 300px;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Guestbook Section */
+.guestbook {
+    background: #9eb1a9; /* Retain only the background color */
+    color: #ffffff;
+    padding: 2rem 1rem;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.guestbook textarea {
+    width: 80%;
+    max-width: 500px;
+    height: 120px;
+    margin: 1rem 0;
+    border: 2px solid #9eb1a9;
+    border-radius: 8px;
+    padding: 0.75rem;
+    font-family: 'Lora', serif;
+    background-color: #f7f4e9;
+    background-image: url('https://www.transparenttextures.com/patterns/white-diamond.png');
+    background-repeat: repeat;
+}
+
+.guestbook button {
+    font-size: 1.1rem;
+    padding: 0.75rem 2rem;
+    background: #ffffff;
+    color: #9eb1a9;
+    border-radius: 25px;
+    cursor: pointer;
+}
+
+/* Countdown Timer */
+.countdown {
+    background: #f7f4e9;
+    padding: 2rem;
+    margin: 1rem auto 2rem;
+    max-width: 90%;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.countdown-wrapper {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.countdown-unit {
+    background: #fff;
+    padding: 1rem;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.countdown-title {
+    font-family: 'Safira March', cursive; /* Match main header font */
+    font-size: 3rem; /* Adjust font size for emphasis */
+    color: #f7f4e9; /* Cream color */
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.footer {
+    background: #9eb1a9; /* Sage green background */
+    color: #ffffff; /* White text */
+    text-align: center;
+    padding: 2rem;
+    position: relative;
+    border-top: 2px solid #ffffff; /* Add a subtle border */
+    background-image: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.1) 50%, rgba(255, 255, 255, 0.1) 75%, transparent 75%, transparent); /* Subtle pattern */
+    background-size: 40px 40px; /* Adjust pattern size */
+}
+
+/* General Styles */
+body {
+    font-family: 'Cormorant Garamond', 'Lora', serif; /* More elegant serif font for body text */
+    color: #506369; /* Updated from #333 to #506369 */
+    background-color: #f7f4e9; /* Light cream background */
+    margin: 0;
+    padding: 0;
+}
+
+/* Typography */
+h1, h2, h3 {
+    font-family: 'Playfair Display', serif; /* Elegant serif font for headings */
+    font-weight: normal;
+    color: #2c3e50; /* Darker heading color */
+    text-align: center;
+}
+
+/* Typography - updating headers on cream backgrounds */
+h2 {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 1rem;
+    font-size: 3.5rem;
+    font-family: 'EDLavonia' , regular;
+    color: #ffffff; /* Default sage green */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+/* Headers in cream background sections */
+.details h2, .gallery h2, .attire h2 {
+    color: #bf7e7e; /* Blush pink */
+}
+
+h2::after {
+    content: '';
+    display: block;
+    width: 60%;
+    height: 2px;
+    background: #f7f4e9; /* Sage green */
+    margin: 0.5rem auto 0;
+}
+
+p {
+    font-family: 'Lora', serif; /* Elegant serif font for paragraphs */
+    line-height: 1.6;
+    font-size: 1.1em;
+    margin: 0 0 1em;
+    color: #506369; /* Added to ensure consistency */
+}
+
+/* Layout */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background: #ffffff; /* White content background */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    border-radius: 8px; /* Rounded corners */
+}
+
+/* Buttons */
+button, .btn {
+    font-family: 'Georgia', serif;
+    background-color: #2c3e50; /* Dark button background */
+    color: #ffffff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover, .btn:hover {
+    background-color: #34495e; /* Slightly lighter on hover */
+}
+
+/* Links */
+a {
+    color: #2980b9; /* Elegant blue for links */
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Additional Styling */
+blockquote {
+    font-style: italic;
+    color: #7f8c8d; /* Subtle gray for quotes */
+    border-left: 4px solid #bdc3c7;
+    padding-left: 10px;
+    margin: 20px 0;
+}
+
+/* Welcome Section */
+.welcome {
+    background: #9eb1a9; /* Retain only the background color */
+    color: #ffffff; /* White text */
+    padding: 3rem 1rem;
+    border-top-left-radius: 0; /* Remove top radius */
+    border-top-right-radius: 0; /* Remove top radius */
+    border-bottom-left-radius: 8px; /* Keep bottom radius */
+    border-bottom-right-radius: 8px; /* Keep bottom radius */
+    box-shadow: none;
+    margin-top: 0; /* Remove any top margin */
+    position: relative; /* For z-index if needed */
+    z-index: 0; /* Ensure it's behind the header's after element */
+}
+
+.welcome p {
+    font-size: 1.2rem; /* Slightly larger font size */
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+    transition: all 0.5s ease;
+}
+
+blockquote {
+    font-style: italic;
+    color: #f7f4e9; /* Light cream */
+    border-left: 4px solid #ffffff; /* White border */
+    padding-left: 10px;
+    margin: 20px 0;
+    transition: all 0.5s ease;
+}
+
+/* Wedding Details Section */
+.details {
+    background: #f7f4e9; /* Retain only the background color */
+    color: #506369; /* Updated from #333 to #506369 */
+    /* Removed border: 2px solid #9eb1a9; */
+    padding: 2rem 1rem;
+    border-radius: 8px;
+    box-shadow: none; /* Removed shadow */
+    text-align: center; /* Explicitly center all content in the details section */
+}
+
+.details p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+    margin-left: auto; /* Add auto margins to center paragraphs */
+    margin-right: auto;
+    color: #506369; /* Added to ensure consistency */
+    text-align: center; /* Ensure paragraph text is centered */
+}
+
+.details h2::after {
+    background: #bf7e7e; /* Blush pink line for consistency */
+}
+
+/* RSVP Section */
+.rsvp {
+    background: #9eb1a9; /* Retain only the background color */
+    color: #ffffff; /* White text */
+    padding: 2rem 1rem;
+    border-radius: 8px;
+    box-shadow: none; /* Removed shadow */
+    text-align: center;
+}
+
+.rsvp p {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+}
+
+.rsvp .button {
+    font-size: 1.1rem; /* Slightly larger button text */
+    padding: 0.75rem 2rem;
+}
+
+/* Photo Gallery Section */
+.gallery {
+    background: #f7f4e9; /* Retain only the background color */
+    padding: 2rem 1rem;
+    border-radius: 8px;
+    box-shadow: none; /* Removed shadow */
+}
+
+.gallery-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.gallery img {
+    width: 100%;
+    max-width: 300px;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+.gallery h2::after {
+    background: #bf7e7e; /* Blush pink line for consistency */
+}
+
+/* Guestbook Section */
+.guestbook {
+    background: #9eb1a9; /* Retain only the background color */
+    color: #ffffff; /* White text */
+    padding: 2rem 1rem;
+    border-radius: 8px;
+    box-shadow: none; /* Removed shadow */
+    text-align: center;
+}
+
+.guestbook textarea {
+    width: 80%;
+    max-width: 500px;
+    height: 120px;
+    margin: 1rem 0;
+    border: 2px solid #9eb1a9; /* Sage green border */
+    border-radius: 8px;
+    padding: 0.75rem;
+    font-family: 'Lora', serif; /* Elegant serif font for textarea */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: #f7f4e9; /* Fallback light cream background */
+    background-image: url('https://www.transparenttextures.com/patterns/white-diamond.png');
+    background-repeat: repeat; /* Ensure the pattern repeats */
+    background-size: auto; /* Use the natural size of the pattern */
+}
+
+.guestbook button {
+    font-size: 1.1rem;
+    padding: 0.75rem 2rem;
+    background: #ffffff; /* White background */
+    color: #9eb1a9; /* Sage green text */
+    border: 2px solid #ffffff; /* White border */
+    border-radius: 25px;
+    cursor: pointer;
+    font-family: 'Lora', serif;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.guestbook button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+    background: #9eb1a9; /* Sage green */
+    color: #ffffff; /* White text */
+}
+
+/* Countdown Timer */
+.countdown {
+    background: #f7f4e9; /* Light cream background */
+    padding: 2rem;
+    margin: 1rem auto 2rem;
+    max-width: 90%;
+    border-radius: 10px;
+    position: relative;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    /* Removed border: 2px solid #9eb1a9; */
+    color: #506369; /* Added to ensure consistency */
+}
+
+.countdown-wrapper {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    color: #506369; /* Updated from #2c3e50 to #506369 */
+}
+
+.countdown-unit {
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    border-radius: 10px;
+    min-width: 100px;
+    /* Removed border: 2px solid #9eb1a9; */
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+.countdown-unit::after {
+    content: '';
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    right: 5px;
+    bottom: 5px;
+    border: 1px solid #bf7e7e; /* Blush pink inner border */
+    border-radius: 7px;
+    opacity: 0.3;
+    pointer-events: none;
+}
+
+.countdown-unit span:first-child {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #9eb1a9; /* Sage green */
+}
+
+.unit-label {
+    font-family: 'Lora', serif;
+    font-size: 1rem;
+    margin-top: 0.5rem;
+    color: #bf7e7e; /* Blush pink */
+}
+
+@media (max-width: 768px) {
+    .countdown-wrapper {
+        gap: 1rem;
+    }
+    
+    .countdown-unit {
+        min-width: 80px;
+        padding: 0.8rem;
+    }
+    
+    .countdown-unit span:first-child {
+        font-size: 2rem;
+    }
+    
+    .countdown-title {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .countdown-unit {
+        min-width: 60px;
+        padding: 0.5rem;
+    }
+    
+    .countdown-unit span:first-child {
+        font-size: 1.5rem;
+    }
+    
+    .unit-label {
+        font-size: 0.8rem;
+    }
+    
+    .countdown-title {
+        font-size: 1.8rem;
+    }
+}
+
+/* RESPONSIVE CSS */
 /*==================================*/
 
-@media (min-width: 40em) {
-  /* Bump up size of carousel content */
-  .carousel-caption p {
-    margin-bottom: 1.25rem;
-    font-size: 1.25rem;
-    line-height: 1.4;
-  }
+/* For small screens (phones) */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2.5rem; /* Reduce header font size */
+    }
 
-  .featurette-heading {
-    font-size: 50px;
-  }
+    nav {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav a {
+        margin: 0.5rem 0; /* Add spacing between links */
+        font-size: 1rem; /* Adjust font size */
+    }
+
+    .section {
+        padding: 2rem 1rem; /* Reduce padding */
+    }
+
+    .gallery img {
+        max-width: 100%; /* Ensure images fit within the screen */
+        margin: 0.5rem 0; /* Add spacing between images */
+    }
+
+    .countdown {
+        font-size: 1.2rem; /* Adjust countdown font size */
+        padding: 1rem; /* Reduce padding */
+    }
+
+    .guestbook textarea {
+        width: 90%; /* Adjust textarea width */
+    }
+
+    .button {
+        padding: 0.5rem 1rem; /* Reduce button padding */
+        font-size: 0.9rem; /* Adjust button font size */
+    }
 }
 
-@media (min-width: 62em) {
-  .featurette-heading {
-    margin-top: 7rem;
-  }
+/* For very small screens (e.g., older phones) */
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 2rem; /* Further reduce header font size */
+    }
+
+    .section {
+        padding: 1.5rem 0.5rem; /* Further reduce padding */
+    }
+
+    .gallery img {
+        max-width: 100%; /* Ensure images fit within the screen */
+    }
+
+    .countdown {
+        font-size: 1rem; /* Further adjust countdown font size */
+    }
+
+    .button {
+        font-size: 0.8rem; /* Further adjust button font size */
+    }
+}
+
+/* Attire Section */
+.attire {
+    background: #f7f4e9; /* Retain only the background color */
+    color: #506369;
+    padding: 2rem 1rem;
+    border-radius: 8px;
+    box-shadow: none; /* Removed shadow */
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.attire h2::after {
+    background: #bf7e7e; /* Blush pink line for consistency */
+}
+
+.attire-subheading {
+    font-family: 'EDLavonia' , regular;
+    font-size: 2rem;
+    color: #bf7e7e; /* Blush pink to match other sections */
+    margin: 1.5rem auto;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.15);
+}
+
+.attire-details {
+    margin: 2rem auto;
+    max-width: 800px;
+}
+
+.attire-type {
+    margin-bottom: 2rem;
+}
+
+.attire-type p {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.color-palette p {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+}
+
+.color-samples {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.color-sample {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: relative;
+    /* Simple hover effect without animations */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.color-sample:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+}
+
+.color-sample span {
+    position: absolute;
+    bottom: -25px;
+    font-family: 'Lora', serif;
+    font-size: 0.9rem;
+    color: #506369;
+}
+
+/* For small screens (phones) */
+@media (max-width: 768px) {
+    .color-samples {
+        gap: 1rem;
+    }
+    
+    .color-sample {
+        width: 60px;
+        height: 60px;
+    }
+    
+}
+
+/* Decorative Graphics - Updated with reliable sources */
+.decorative-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: 400px;
+    opacity: 0.03;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.header-decoration {
+    position: absolute;
+    width: 250px;
+    height: 150px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: 0.8;
+}
+
+.header-decoration.left {
+    top: 10px;
+    left: 10px;
+    background-image: url('https://www.clipartmax.com/png/full/57-577815_flowers-scalable-vector-graphics-watercolor-painting-blush-and-navy-flower-png.png');
+}
+
+.header-decoration.right {
+    top: 10px;
+    right: 10px;
+    background-image: url('https://www.clipartmax.com/png/full/57-577815_flowers-scalable-vector-graphics-watercolor-painting-blush-and-navy-flower-png.png');
+    transform: scaleX(-1);
+}
+
+.divider {
+    display: flex;
+    justify-content: center;
+    margin: 2rem 0;
+}
+
+.divider img {
+    max-width: 300px;
+    opacity: 0.6;
+}
+
+/* Removed .corner-decoration styles */
+
+.footer-decoration {
+    display: none; /* Remove the image */
+}
+
+/* Make sections relative for corner decorations */
+footer {
+    position: relative;
+}
+
+/* Adjustments for mobile */
+@media (max-width: 768px) {
+    .header-decoration, .corner-decoration {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .divider img {
+        max-width: 200px;
+    }
+}
+
+/* CSS-only Divider - Replacing image-based dividers */
+.divider {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin: 2.5rem 0;
+    height: 40px;
+}
+
+.divider::before,
+.divider::after {
+    content: '';
+    flex: 1;
+    border-bottom: 1px solid rgba(212, 175, 55, 0.7); /* Gold color */
+}
+
+.divider::before {
+    margin-right: 1.5rem;
+}
+
+.divider::after {
+    margin-left: 1.5rem;
+}
+
+.divider-icon {
+    font-size: 1.5rem;
+    color: rgba(212, 175, 55, 0.9); /* Gold color, more opaque */
+    padding: 0 1rem;
+    position: relative;
+}
+
+.divider-icon::before {
+    content: '❧'; /* Fleuron left */
+    display: inline-block;
+    margin: 0 8px;
+}
+
+.divider-icon::after {
+    content: '❦'; /* Fleuron right */
+    display: inline-block;
+    margin: 0 8px;
+}
+
+/* Add center symbol to the divider */
+.divider-icon span {
+    display: inline-block;
+    font-size: 1.2rem;
+    margin: 0 8px;
+    color: rgba(212, 175, 55, 1); /* Solid gold */
+    transform: scale(1.2);
+}
+
+/* Enhanced Metallic Gold Divider */
+.divider {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin: 2.5rem 0;
+    height: 40px;
+}
+
+.divider::before,
+.divider::after {
+    content: '';
+    flex: 1;
+    border-bottom: 1px solid transparent; /* Transparent base */
+    background: linear-gradient(to right, rgba(212, 175, 55, 0.3), rgba(212, 175, 55, 0.9), rgba(212, 175, 55, 0.3)); /* Metallic gold gradient */
+    height: 1px;
+}
+
+.divider::before {
+    margin-right: 1.5rem;
+}
+
+.divider::after {
+    margin-left: 1.5rem;
+}
+
+.divider-icon {
+    font-size: 1.5rem;
+    padding: 0 1rem;
+    position: relative;
+    text-shadow: 0px 1px 1px rgba(0,0,0,0.1);
+    /* Metallic gold text gradient */
+    background: linear-gradient(to bottom, #f8de8c 0%, #d4af37 50%, #c5a028 51%, #f0d171 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+}
+
+.divider-icon::before {
+    content: '❧'; /* Fleuron left */
+    display: inline-block;
+    margin: 0 8px;
+}
+
+.divider-icon::after {
+    content: '❦'; /* Fleuron right */
+    display: inline-block;
+    margin: 0 8px;
+}
+
+/* Add center symbol to the divider with enhanced gold effect */
+.divider-icon span {
+    display: inline-block;
+    font-size: 1.2rem;
+    margin: 0 8px;
+    transform: scale(1.2);
+    background: linear-gradient(to bottom, #f8de8c 0%, #d4af37 50%, #c5a028 51%, #f0d171 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+    text-shadow: 0px 2px 2px rgba(0,0,0,0.1);
+}
+
+.header-decoration {
+    position: absolute;
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: 0.8;
+    transition: all 0.3s ease; /* Smooth resizing */
+}
+
+.header-decoration.left {
+    top: 30px;
+    left: 30px;
+    background-image: url('https://www.clipartmax.com/png/full/57-577815_flowers-scalable-vector-graphics-watercolor-painting-blush-and-navy-flower-png.png');
+}
+
+.header-decoration.right {
+    top: 30px;
+    right: 30px;
+    background-image: url('https://www.clipartmax.com/png/full/57-577815_flowers-scalable-vector-graphics-watercolor-painting-blush-and-navy-flower-png.png');
+    transform: scaleX(-1);
+}
+
+/* Responsive adjustments for corner images */
+@media (max-width: 768px) {
+    .header-decoration {
+        width: 100px;
+        height: 100px;
+    }
+
+    .header-decoration.left {
+        top: 20px;
+        left: 20px;
+    }
+
+    .header-decoration.right {
+        top: 20px;
+        right: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .header-decoration {
+        width: 60px;
+        height: 60px;
+    }
+
+    .header-decoration.left {
+        top: 10px;
+        left: 10px;
+    }
+
+    .header-decoration.right {
+        top: 10px;
+        right: 10px;
+    }
 }

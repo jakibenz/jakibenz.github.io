@@ -1,229 +1,178 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<!-- Bootstrap core CSS -->
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-	<!-- google fonts -->
-	<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
-	<!-- own style -->
-	<link rel="stylesheet" type="text/css" href="style.css">
-	<!-- animate CSS -->
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
-	<!-- Title bar Icon -->
-	<link rel="icon" type="image/gif/png" href="stormtrooper_star_wars.png">
-
-	<title>KSG Resort</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Wedding of Kenji & Tricia</title> <!-- Updated website title -->
+    <!-- Link to Animate.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <!-- Link to External CSS -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Playfair+Display:wght@400;700&family=Great+Vibes&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Lora:wght@400;700&family=Playfair+Display:wght@400;700&family=Great+Vibes&display=swap" rel="stylesheet">
 </head>
 <body>
-	<!-- Navigation Bar -->
-	<nav class="fixed-top">
-		<div class="container-fluid">
-			<div class="row no-gutters">
-				<div class="col">
-					<ul class="nav nav-pills" id="myTab" role="tablist">
-						<li class="nav-item">
-							<a class="nav-link" id="home-tab" data-toggle="pill" href="#home" role="tab" aria-controls="home" aria-selected="false">Room1</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" id="profile-tab" data-toggle="pill" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Room2</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" id="contact-tab" data-toggle="pill" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Room3</a>
-						</li>
-					</ul>
-				</div>
-				<div class="col second">
-					<ul class="nav justify-content-end">
-						<li class="nav-item">
-							<a class="nav-link" href="#firsfeature">About us</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link active" href="index.html">Home</a>
-						</li>
-						<li class="nav-item book">
-							<a class="nav-link btn btn-success" href="#signup">Book now</a>
-						</li>
-					</ul>
-				</div>
-			</div>
-		</div>
-	</nav>
-	<!-- Nav Bar -->
-	<!-- Nav Tab Contents -->
-	<div class="intro-page">
-		<div class="mask d-flex flex-column justify-content-center align-items-center">
-			<div class="container d-flex justify-content-center">
-				<div class="row">
-					<h1 class="animated zoomIn text-white brand">KSG Resort</h1>
-				</div>
-			</div>
-			<div class="tab-content" id="nav-tabContent">
-				<div class="tab-pane fade show" id="home" role="tabpanel" aria-labelledby="home-tab">
+    <div class="decorative-background"></div>
+    
+    <header>
+        <div class="header-decoration left"></div>
+        <div class="header-decoration right"></div>
+        <h1 class="wow animate__animated animate__fadeInDown">The Wedding of</h1>
+        <h2 class="wow animate__animated animate__fadeInDown">Kenji & Tricia</h2>
+        <h3 class="wow animate__animated animate__fadeInDown">October 3, 2025</h3>
+        <nav>
+            <a href="#welcome"><span class="material-icons">home</span> Welcome</a>
+            <a href="#details"><span class="material-icons">event</span> Details</a>
+            <a href="#attire"><span class="material-icons">checkroom</span> Attire</a>
+            <a href="#rsvp"><span class="material-icons">check_circle</span> RSVP</a>
+            <a href="#gallery"><span class="material-icons">photo</span> Gallery</a>
+            <a href="#guestbook"><span class="material-icons">edit</span> Guestbook</a>
+        </nav>
+    </header>
 
-					<!-- carousel for Room1 -->			
-					<div id="demo" class="carousel slide carousel-fade" data-ride="carousel">
+    <section id="welcome" class="welcome">
+        <h2 class="wow animate__animated animate__fadeInUp" data-wow-duration="1.5s">Welcome</h2>
+        <p class="wow animate__animated animate__fadeInUp" data-wow-duration="1.5s" data-wow-delay="0.3s">We are so excited to share this special moment with you. Join us as we celebrate our love and commitment.</p>
+        <blockquote class="wow animate__animated animate__fadeInUp" data-wow-duration="1.5s" data-wow-delay="0.5s">"Love is not about how many days, months, or years you have been together. Love is about how much you love each other every single day."</blockquote>
+        <h3 class="countdown-title wow animate__animated animate__fadeInUp" data-wow-duration="1.5s" data-wow-delay="0.7s">Countdown to Forever</h3>
+        <div class="countdown wow animate__animated animate__fadeInUp" data-wow-duration="1.5s" data-wow-delay="0.9s">
+            <div class="countdown-wrapper">
+                <div class="countdown-unit">
+                    <span id="months">0</span>
+                    <span class="unit-label">Months</span>
+                </div>
+                <div class="countdown-unit">
+                    <span id="days">0</span>
+                    <span class="unit-label">Days</span>
+                </div>
+                <div class="countdown-unit">
+                    <span id="hours">0</span>
+                    <span class="unit-label">Hours</span>
+                </div>
+                <div class="countdown-unit">
+                    <span id="minutes">0</span>
+                    <span class="unit-label">Minutes</span>
+                </div>
+                <div class="countdown-unit">
+                    <span id="seconds">0</span>
+                    <span class="unit-label">Seconds</span>
+                </div>
+            </div>
+        </div>
+    </section>
 
-						<!-- Indicators -->
-						<ul class="carousel-indicators">
-							<li data-target="#demo" data-slide-to="0" class="active"></li>
-							<li data-target="#demo" data-slide-to="1"></li>
-							<li data-target="#demo" data-slide-to="2"></li>
-						</ul>
-						<!-- The slideshow -->
-						<div class="carousel-inner rounded border border-0">
-							<div class="carousel-item active">
-								<img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=fbaf60783e07f7b6bff745cc88da064a&auto=format&fit=crop&w=1350&q=80" alt="Room1-1">
-								<div class="carousel-caption d-none d-md-block">
-									<h4>Living Room</h4>
-									<p>Elegant living and spacious</p>
-								</div>
-							</div>
-							<div class="carousel-item">
-								<img src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=b28e42e1dd19f807e6262ed37bb3e751&auto=format&fit=crop&w=1350&q=80" alt="Room1-2">
-								<div class="carousel-caption d-none d-md-block text-dark">
-									<h4>Study Area</h4>
-									<p>Relaxing and peaceful ambiance</p>
-								</div>
-								</div
-							</div>
-							<div class="carousel-item">
-								<img src="https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=58e46263ad3bf111afb122d48a46b2c6&auto=format&fit=crop&w=1951&q=80" alt="Room1-3">
-								<div class="carousel-caption d-none d-md-block">
-									<h4>Bed Room</h4>
-									<p>Comfotable and soft bed</p>
-								</div>
-							</div>
-						</div>
-						<!-- Left and right controls -->
-						<a class="carousel-control-prev" href="#demo" data-slide="prev">
-							<span class="carousel-control-prev-icon"></span>
-						</a>
-						<a class="carousel-control-next" href="#demo" data-slide="next">
-							<span class="carousel-control-next-icon"></span>
-						</a>
+    <div class="divider">
+        <div class="divider-icon"><span>✦</span></div>
+    </div>
 
-					</div>
-				</div>
-				<div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">Coming Soon...</div>
-				<div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">Coming Soon...</div>
-			</div>
-			<div class="container d-flex justify-content-center">
-				<div class="row">
-					<section class="d-flex justify-content-center" id="signup">
-						<!-- <div class="display-3">SIGN UP</div> -->
-						<!-- Begin Mailchimp Signup Form -->
-							<link href="//cdn-images.mailchimp.com/embedcode/slim-10_7.css" rel="stylesheet" type="text/css">
-							<style type="text/css">
-							#mc_embed_signup{clear:left; font:14px Helvetica,Arial,sans-serif; }
-							/* Add your own Mailchimp form style overrides in your site stylesheet or in this style block.
-							We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
-						</style>
-						<div id="mc_embed_signup">
-							<form action="https://ksg.us19.list-manage.com/subscribe/post?u=9136fbd6dd2e8af7272c4cf19&amp;id=bad1c87071" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
-								<div id="mc_embed_signup_scroll">
-									<!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
-									<div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_9136fbd6dd2e8af7272c4cf19_bad1c87071" tabindex="-1" value=""></div>
-									<div class="clear">
-										<input class="btn btn-light btn-lg" type="submit" value="Learn More" name="subscribe" id="mc-embedded-subscribe" class="button">
-									</div>
-								</div>
-							</form>
-						</div>
-						<!--End mc_embed_signup-->
-					</section>
-				</div>
-			</div>
-		</div>
-	</div>
-<!-- Nav Tab Contents End-->
-<!-- Main -->
-	<main>
-		<div class="container marketing">
-		<!-- sign up section -->
+    <section id="details" class="details wow animate__animated animate__fadeIn">
+        <h2>Wedding Details</h2>
+        <p><strong>Date:</strong> October 3, 2025</p>
+        <p><strong>Time:</strong> 4:00 PM</p>
+        <p><strong>Venue:</strong> The Green Garden, Cityville</p>
+        <p>Join us for a day filled with love, laughter, and memories to cherish forever.</p>
+    </section>
 
-		<!-- <div class="container marketing"> -->
+    <div class="divider">
+        <div class="divider-icon"><span>✦</span></div>
+    </div>
 
-			<!-- Three columns of text below the carousel -->
-			<div class="wow fadeInUp row">
-				<div class="col-lg-4">
-					<img class="rounded-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
-					<h2>Heading</h2>
-					<p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.</p>
-					<p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
-				</div><!-- /.col-lg-4 -->
-				<div class="col-lg-4">
-					<img class="rounded-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
-					<h2>Heading</h2>
-					<p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
-					<p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
-				</div><!-- /.col-lg-4 -->
-				<div class="col-lg-4">
-					<img class="rounded-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
-					<h2>Heading</h2>
-					<p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-					<p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
-				</div><!-- /.col-lg-4 -->
-			</div><!-- /.row -->
+    <section id="attire" class="attire wow animate__animated animate__fadeIn">
+        <h2>Attire</h2>
+        <p>We kindly encourage our guests to wear these colors for our special day</p>
+        
+        <div class="attire-details">
+            <h3 class="attire-subheading wow animate__animated animate__fadeInUp">Dress Code</h3>
+            <div class="attire-type">
+                <p class="animate-item"><strong>Barong Tagalog</strong> for men</p>
+                <p class="animate-item"><strong>Long gown</strong> for women</p>
+            </div>
+            
+            <div class="color-palette wow animate__animated animate__fadeIn" data-wow-delay="0.3s">
+                <p><strong>Neutrals:</strong> Grey, Beige, Peach, Cream, Tan</p>
+                <div class="color-samples">
+                    <div class="color-sample animate-color" style="background-color: #b7b7b7;"><span>Grey</span></div>
+                    <div class="color-sample animate-color" style="background-color: #e4e3e2; animation-delay: 0.1s"><span>Beige</span></div>
+                    <div class="color-sample animate-color" style="background-color: #f4d4b7; animation-delay: 0.2s"><span>Peach</span></div>
+                    <div class="color-sample animate-color" style="background-color: #d5b690; animation-delay: 0.3s"><span>Cream</span></div>
+                    <div class="color-sample animate-color" style="background-color: #c2b19c; animation-delay: 0.4s"><span>Tan</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
 
+    <div class="divider">
+        <div class="divider-icon"><span>✦</span></div>
+    </div>
 
-			<!-- START THE FEATURETTES -->
+    <section id="rsvp" class="rsvp wow animate__animated animate__fadeInRight">
+        <h2>RSVP</h2>
+        <p>We would love to know if you can make it!</p>
+        <button class="rsvp-button" onclick="window.location.href='https://forms.google.com'">RSVP Now</button>
+    </section>
 
-			<hr class="featurette-divider">
+    <section id="gallery" class="gallery wow animate__animated animate__fadeInUp">
+        <h2>Photo Gallery</h2>
+        <p>Take a look at some of our favorite moments together.</p>
+        <div class="gallery-grid">
+            <img src="https://picsum.photos/300/300?random=1" alt="Photo 1">
+            <img src="https://picsum.photos/300/300?random=2" alt="Photo 2">
+            <img src="https://picsum.photos/300/300?random=3" alt="Photo 3">
+            <img src="https://picsum.photos/300/300?random=4" alt="Photo 4">
+            <img src="https://picsum.photos/300/300?random=5" alt="Photo 5">
+            <img src="https://picsum.photos/300/300?random=6" alt="Photo 6">
+        </div>
+    </section>
 
-			<div class="wow fadeInUp row featurette" id="firsfeature">
-				<div class="col-md-7">
-					<h2 class="featurette-heading">First featurette heading. <span class="text-muted">It'll blow your mind.</span></h2>
-					<p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
-				</div>
-				<div class="col-md-5">
-					<img class="featurette-image img-fluid mx-auto" data-src="holder.js/500x500/auto" alt="Generic placeholder image">
-				</div>
-			</div>
+    <section id="guestbook" class="guestbook wow animate__animated animate__fadeInUp">
+        <h2>Guestbook</h2>
+        <p>Leave us a message to celebrate our special day!</p>
+        <textarea placeholder="Write your message here..."></textarea>
+        <br>
+        <button>Submit</button>
+    </section>
 
-			<hr class="featurette-divider">
+    <footer class="wow animate__animated animate__fadeIn">
+        <div class="footer-decoration"></div>
+        <p>Thank you for being part of our special day! &copy; 2025</p>
+    </footer>
 
-			<div class="wow fadeInUp row featurette">
-				<div class="col-md-7 order-md-2">
-					<h2 class="featurette-heading">Oh yeah, it's that good. <span class="text-muted">See for yourself.</span></h2>
-					<p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
-				</div>
-				<div class="col-md-5 order-md-1">
-					<img class="featurette-image img-fluid mx-auto" data-src="holder.js/500x500/auto" alt="Generic placeholder image">
-				</div>
-			</div>
+    <!-- Link to WOW.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+    <script>
+        new WOW().init();
 
-			<hr class="featurette-divider">
+        // Countdown Timer Script
+        const weddingDate = new Date("October 3, 2025 14:00:00").getTime();
+        const timer = document.getElementById("timer");
 
-			<div class="wow fadeInUp row featurette">
-				<div class="col-md-7">
-					<h2 class="featurette-heading">And lastly, this one. <span class="text-muted">Checkmate.</span></h2>
-					<p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
-				</div>
-				<div class="col-md-5">
-					<img class="featurette-image img-fluid mx-auto" data-src="holder.js/500x500/auto" alt="Generic placeholder image">
-				</div>
-			</div>
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const distance = weddingDate - now;
 
-			<hr class="featurette-divider">
+            const months = Math.floor(distance / (1000 * 60 * 60 * 24 * 30));
+            const days = Math.floor((distance % (1000 * 60 * 60 * 24 * 30)) / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-			<!-- /END THE FEATURETTES -->
+            // Update the individual spans by their IDs  
+            document.getElementById('months').textContent = months;  
+            document.getElementById('days').textContent = days;  
+            document.getElementById('hours').textContent = hours;  
+            document.getElementById('minutes').textContent = minutes;  
+            document.getElementById('seconds').textContent = seconds; 
 
-		</div><!-- /.container -->
+            if (distance < 0) {
+                clearInterval(countdownInterval);
+                timer.innerHTML = "The big day is here!";
+            }
+        }
 
-
-		<!-- FOOTER -->
-		<footer class="footer">
-			<p class="float-right"><a href="#">Back to top</a></p>
-			<p>&copy; 2017-2018 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
-		</footer>
-	</main>
-
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
-	<script>
-		new WOW().init();
-	</script>
-	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+        const countdownInterval = setInterval(updateCountdown, 1000);
+        // Initial call to display the countdown immediately  
+        updateCountdown();
+    </script>
 </body>
 </html>
