@@ -24,28 +24,55 @@ nav .container-fluid{
 
 /* Cleaned CSS starts here */
 
-/* Navbar */
+/* Navbar - Updated for better icon alignment */
 nav {
     margin-top: 1rem;
 }
 
 nav a {
     text-decoration: none;
-    color: #ffffff; /* White text */
+    color: #fffbfa; /* Updated from white text */
     margin: 0 1rem;
     font-weight: normal;
-    font-family: 'Lora', serif; /* Elegant serif font for navigation */
+    font-family: 'Safira March', serif; /* Consistent font for navigation */
     transition: color 0.3s ease;
+    display: inline-flex; /* Use flexbox for better alignment */
+    align-items: center; /* Vertically center the icon and text */
+    font-size: 1rem; /* Consistent font size */
+}
+
+nav a .material-icons {
+    font-size: 2 rem; /* Slightly larger icons for balance */
+    margin-right: 0.4rem; /* Space between icon and text */
+    vertical-align: middle; /* Align with text */
 }
 
 nav a:hover {
     color: #bf7e7e; /* Changed from cream to blush pink */
 }
 
+/* Responsive nav adjustments */
+@media (max-width: 768px) {
+    nav {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav a {
+        margin: 0.5rem 0; /* Add spacing between links */
+        font-size: 0.95rem; /* Slightly smaller font on mobile */
+    }
+    
+    nav a .material-icons {
+        font-size: 1.1rem; /* Slightly smaller icons on mobile */
+    }
+}
+
 /* Header */
 header {
     background: #9eb1a9; /* Retain only the background color */
-    color: #ffffff;
+    color: #fffbfa;
     text-align: center;
     padding: 0;
     position: relative;
@@ -72,20 +99,20 @@ header {
 
 header h1, header h2, header h3 {
     font-family: 'Safira March', cursive; /* Apply Safira March font */
-    color: #ffffff;
+    color: #fffbfa;
     margin: 0.5rem 0;
 }
 
 header h1 {
     font-family: 'EDLavonia', regular; /* Elegant calligraphy font */
     font-size: 2.5rem; /* Smaller font size */
-    color: #ffffff;
+    color: #fffbfa;
     margin: 0.5rem 0;
 }
 
 header h2 {
     font-size: 7rem; /* Increased font size for "Kenji & Tricia" */
-    color: #ffffff;
+    color: #fffbfa;
     margin: 0.5rem 0;
 }
 
@@ -107,7 +134,7 @@ header::after {
 /* Welcome Section */
 .welcome {
     background: #9eb1a9; /* Retain only the background color */
-    color: #ffffff;
+    color: #fffbfa; /* White text */
     padding: 3rem 1rem;
     border-radius: 0 0 8px 8px;
     margin-top: 0;
@@ -125,7 +152,7 @@ header::after {
 blockquote {
     font-style: italic;
     color: #f7f4e9;
-    border-left: 4px solid #ffffff;
+    border-left: 4px solid #fffbfa; /* Updated from white */
     padding-left: 10px;
     margin: 20px 0;
     transition: all 0.5s ease;
@@ -197,7 +224,7 @@ blockquote {
 /* RSVP Section */
 .rsvp {
     background: #9eb1a9; /* Retain only the background color */
-    color: #ffffff;
+    color: #fffbfa;
     padding: 2rem 1rem;
     border-radius: 8px;
     text-align: center;
@@ -212,7 +239,7 @@ blockquote {
     font-family: 'Lora', serif;
     font-size: 1.2rem;
     padding: 0.75rem 2rem;
-    background: #ffffff; /* White background */
+    background: #fffbfa; /* Updated from white */
     color: #9eb1a9; /* Sage green text */
     border: 2px solid #9eb1a9; /* Sage green border */
     border-radius: 25px;
@@ -223,7 +250,7 @@ blockquote {
 
 .rsvp-button:hover {
     background: #9eb1a9; /* Sage green background */
-    color: #ffffff; /* White text */
+    color: #fffbfa; /* White text */
     transform: translateY(-3px); /* Slight lift effect */
     box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15); /* Enhanced shadow */
 }
@@ -258,7 +285,7 @@ blockquote {
 /* Guestbook Section */
 .guestbook {
     background: #9eb1a9; /* Retain only the background color */
-    color: #ffffff;
+    color: #fffbfa;
     padding: 2rem 1rem;
     border-radius: 8px;
     text-align: center;
@@ -281,15 +308,16 @@ blockquote {
 .guestbook button {
     font-size: 1.1rem;
     padding: 0.75rem 2rem;
-    background: #ffffff;
+    background: #fffbfa;
     color: #9eb1a9;
     border-radius: 25px;
     cursor: pointer;
+    border: 2px solid #fffbfa; /* Updated from white */
 }
 
 /* Countdown Timer */
 .countdown {
-    background: #f7f4e9;
+    background: #9eb1a9;
     padding: 2rem;
     margin: 1rem auto 2rem;
     max-width: 90%;
@@ -318,15 +346,24 @@ blockquote {
     margin-bottom: 1rem;
 }
 
-.footer {
+footer {
     background: #9eb1a9; /* Sage green background */
-    color: #ffffff; /* White text */
+    color: #fffbfa; /* Updated from white */
     text-align: center;
-    padding: 2rem;
+    padding: 1rem 1rem; /* Reduced padding to make footer smaller */
     position: relative;
-    border-top: 2px solid #ffffff; /* Add a subtle border */
-    background-image: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.1) 50%, rgba(255, 255, 255, 0.1) 75%, transparent 75%, transparent); /* Subtle pattern */
-    background-size: 40px 40px; /* Adjust pattern size */
+    border-top: 2px solid ##9eb1a9; /* Updated from white */
+    background-image: url('https://www.transparenttextures.com/patterns/white-diamond.png'); /* Transparent texture */
+    background-size: 25px 25px; /* Smaller pattern size */
+    background-repeat: repeat; /* Ensure the pattern repeats */
+}
+
+footer p {
+    font-family: 'Lora', serif; /* Elegant serif font */
+    font-size: 1rem; /* Smaller font size */
+    margin: 0;
+    position: relative; /* Ensure text is above any decoration */
+    z-index: 1;
 }
 
 /* General Styles */
@@ -353,7 +390,7 @@ h2 {
     margin-bottom: 1rem;
     font-size: 3.5rem;
     font-family: 'EDLavonia' , regular;
-    color: #ffffff; /* Default sage green */
+    color: #fffbfa; /* Default sage green */
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
 }
 
@@ -367,7 +404,7 @@ h2::after {
     display: block;
     width: 60%;
     height: 2px;
-    background: #f7f4e9; /* Sage green */
+    background: #fffbfa; /* Updated from white */
     margin: 0.5rem auto 0;
 }
 
@@ -393,7 +430,7 @@ p {
 button, .btn {
     font-family: 'Georgia', serif;
     background-color: #2c3e50; /* Dark button background */
-    color: #ffffff;
+    color: #fffbfa;
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
@@ -419,7 +456,7 @@ a:hover {
 blockquote {
     font-style: italic;
     color: #7f8c8d; /* Subtle gray for quotes */
-    border-left: 4px solid #bdc3c7;
+    border-left: 4px solid #fffbfa; /* Updated from white */
     padding-left: 10px;
     margin: 20px 0;
 }
@@ -427,7 +464,7 @@ blockquote {
 /* Welcome Section */
 .welcome {
     background: #9eb1a9; /* Retain only the background color */
-    color: #ffffff; /* White text */
+    color: #fffbfa; /* White text */
     padding: 3rem 1rem;
     border-top-left-radius: 0; /* Remove top radius */
     border-top-right-radius: 0; /* Remove top radius */
@@ -449,7 +486,7 @@ blockquote {
 blockquote {
     font-style: italic;
     color: #f7f4e9; /* Light cream */
-    border-left: 4px solid #ffffff; /* White border */
+    border-left: 4px solid #fffbfa; /* Updated from white */
     padding-left: 10px;
     margin: 20px 0;
     transition: all 0.5s ease;
@@ -483,9 +520,9 @@ blockquote {
 /* RSVP Section */
 .rsvp {
     background: #9eb1a9; /* Retain only the background color */
-    color: #ffffff; /* White text */
+    color: #fffbfa; /* White text */
     padding: 2rem 1rem;
-    border-radius: 8px;
+    border-radius: 0px;
     box-shadow: none; /* Removed shadow */
     text-align: center;
 }
@@ -535,9 +572,9 @@ blockquote {
 /* Guestbook Section */
 .guestbook {
     background: #9eb1a9; /* Retain only the background color */
-    color: #ffffff; /* White text */
+    color: #fffbfa; /* White text */
     padding: 2rem 1rem;
-    border-radius: 8px;
+    border-radius: 0px;
     box-shadow: none; /* Removed shadow */
     text-align: center;
 }
@@ -561,9 +598,9 @@ blockquote {
 .guestbook button {
     font-size: 1.1rem;
     padding: 0.75rem 2rem;
-    background: #ffffff; /* White background */
+    background: #fffbfa; /* White background */
     color: #9eb1a9; /* Sage green text */
-    border: 2px solid #ffffff; /* White border */
+    border: 2px solid #fffbfa; /* Updated from white */
     border-radius: 25px;
     cursor: pointer;
     font-family: 'Lora', serif;
@@ -575,18 +612,17 @@ blockquote {
     transform: translateY(-3px);
     box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
     background: #9eb1a9; /* Sage green */
-    color: #ffffff; /* White text */
+    color: #fffbfa; /* White text */
 }
 
 /* Countdown Timer */
 .countdown {
-    background: #f7f4e9; /* Light cream background */
+    background: #9eb1a9; /* Light cream background */
     padding: 2rem;
     margin: 1rem auto 2rem;
     max-width: 90%;
     border-radius: 10px;
     position: relative;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
     /* Removed border: 2px solid #9eb1a9; */
     color: #506369; /* Added to ensure consistency */
 }
@@ -600,7 +636,7 @@ blockquote {
 }
 
 .countdown-unit {
-    background: #fff;
+    background: #f7f4e9;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -790,7 +826,7 @@ blockquote {
 .color-samples {
     display: flex;
     justify-content: center;
-    flex-wrap: wrap;
+    /* flex-wrap: wrap; */
     gap: 1.5rem;
     margin-top: 1rem;
 }
@@ -1029,14 +1065,14 @@ footer {
 }
 
 .header-decoration.left {
-    top: 30px;
-    left: 30px;
+    top: 10px;
+    left: 10px;
     background-image: url('https://www.clipartmax.com/png/full/57-577815_flowers-scalable-vector-graphics-watercolor-painting-blush-and-navy-flower-png.png');
 }
 
 .header-decoration.right {
-    top: 30px;
-    right: 30px;
+    top: 10px;
+    right: 10px;
     background-image: url('https://www.clipartmax.com/png/full/57-577815_flowers-scalable-vector-graphics-watercolor-painting-blush-and-navy-flower-png.png');
     transform: scaleX(-1);
 }
@@ -1073,5 +1109,46 @@ footer {
     .header-decoration.right {
         top: 10px;
         right: 10px;
+    }
+}
+
+/* Featured Image Styling */
+.featured-image {
+    position: relative;
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-bottom: 1.5rem;
+    border: 6px solid rgba(255, 251, 250, 0.5); /* Updated from white with opacity */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.featured-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.featured-image:hover {
+    transform: scale(1.05);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Responsive adjustments for the featured image */
+@media (max-width: 768px) {
+    .featured-image {
+        width: 180px;
+        height: 180px;
+    }
+}
+
+@media (max-width: 480px) {
+    .featured-image {
+        width: 150px;
+        height: 150px;
+        border-width: 4px;
     }
 }
