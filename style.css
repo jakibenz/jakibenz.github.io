@@ -1,123 +1,170 @@
-/*GLOBAL STYLES*/
-/*==================================*/
+/*=================================
+  CSS VARIABLES - GLOBAL COLORS
+==================================*/
+:root {
+    /* Color Palette */
+    --sage-green: #9eb1a9;
+    --cream: #f7f4e9;
+    --blush-pink: #bf7e7e;
+    --white: #fffbfa;
+    --text-dark: #506369;
+    --heading-darker: #2c3e50;
+    
+    /* Shadows */
+    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+    --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.2);
+    
+    /* Transitions */
+    --transition-standard: all 0.3s ease;
+}
+
+/*=================================
+  FONT DECLARATIONS
+==================================*/
+@font-face {
+    font-family: 'Safira March';
+    src: url('./fonts/Safira-March-Personal-Use-Only.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'EDLavonia';
+    src: url('./fonts/EDLavonia-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/*=================================
+  GLOBAL STYLES
+==================================*/
 html, body {
-	height: 100%;
-	font-family: 'Montserrat', sans-serif;
+    height: 100%;
+    font-family: 'Cormorant Garamond', 'Lora', serif;
+    color: var(--text-dark);
+    background-color: var(--cream);
+    margin: 0;
+    padding: 0;
 }
 
-/*Navbar*/
-/*==================================*/
-nav .container-fluid{
-	background-color: rgba(0, 0, 0, .5);
-	padding-right: 30px;
-	margin-left: 0px;
-	padding: 15px 0px;
-	flex-wrap: nowrap;
-}
-.nav-item .nav-link {
-	color: #CCD4D4;
-	font-size: 110%
-}
-.nav-pills .nav-item .active {
-    background-color: rgba(158, 177, 169, 0.7); /* Updated Sage Green */
+/* Typography */
+h1, h2, h3 {
+    font-family: 'Playfair Display', serif;
+    font-weight: normal;
+    color: var(--heading-darker);
+    text-align: center;
+    margin: 0.5rem 0;
 }
 
-/* Cleaned CSS starts here */
+h2 {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 1rem;
+    font-size: 3.5rem;
+    font-family: 'EDLavonia', regular;
+    color: var(--white);
+}
 
-/* Navbar - Updated for better icon alignment */
+h2::after {
+    content: '';
+    display: block;
+    width: 60%;
+    height: 2px;
+    background: var(--white);
+    margin: 0.5rem auto 0;
+}
+
+p {
+    font-family: 'Lora', serif;
+    line-height: 1.6;
+    font-size: 1.1em;
+    margin: 0 0 1em;
+    color: var(--text-dark);
+}
+
+/* Links */
+a {
+    color: #2980b9;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Buttons */
+button, .btn {
+    font-family: 'Georgia', serif;
+    background-color: var(--heading-darker);
+    color: var(--white);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover, .btn:hover {
+    background-color: #34495e;
+}
+
+/* Quotes */
+blockquote {
+    font-style: italic;
+    color: var(--cream);
+    border-left: 4px solid var(--white);
+    padding-left: 10px;
+    margin: 20px 0;
+    transition: var(--transition-standard);
+}
+
+/*=================================
+  NAVIGATION
+==================================*/
 nav {
     margin-top: 1rem;
+    z-index: 10;
 }
 
 nav a {
     text-decoration: none;
-    color: #fffbfa; /* Updated from white text */
+    color: var(--white);
     margin: 0 1rem;
     font-weight: normal;
-    font-family: 'Safira March', serif; /* Consistent font for navigation */
+    font-family: 'Safira March', serif;
     transition: color 0.3s ease;
-    display: inline-flex; /* Use flexbox for better alignment */
-    align-items: center; /* Vertically center the icon and text */
-    font-size: 1rem; /* Consistent font size */
+    display: inline-flex;
+    align-items: center;
+    font-size: 1rem;
 }
 
 nav a .material-icons {
-    font-size: 2 rem; /* Slightly larger icons for balance */
-    margin-right: 0.4rem; /* Space between icon and text */
-    vertical-align: middle; /* Align with text */
+    font-size: 2rem;
+    margin-right: 0.4rem;
+    vertical-align: middle;
 }
 
 nav a:hover {
-    color: #bf7e7e; /* Changed from cream to blush pink */
+    color: var(--blush-pink);
 }
 
-/* Responsive nav adjustments */
-@media (max-width: 768px) {
-    nav {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    nav a {
-        margin: 0.3rem 0; /* Add spacing between links */
-        font-size: 0.95rem; /* Slightly smaller font on mobile */
-    }
-    
-    nav a .material-icons {
-        font-size: 1.1rem; /* Slightly smaller icons on mobile */
-    }
-}
-
-/* Header */
+/*=================================
+  HEADER SECTION
+==================================*/
 header {
-    background: #9eb1a9; /* Retain only the background color */
-    color: #fffbfa;
+    background: var(--sage-green);
+    color: var(--white);
     text-align: center;
     padding: 0;
     position: relative;
-    height: 100vh; /* Full-page height */
+    height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     margin-bottom: 0;
-}
-
-@font-face {
-    font-family: 'Safira March';
-    src: url('./fonts/Safira-March-Personal-Use-Only.ttf') format('truetype'); /* Ensure the path is correct */
-    font-weight: normal;
-    font-style: normal;
-}
-@font-face {
-    font-family: 'EDLavonia';
-    src: url('./fonts/EDLavonia-Regular.ttf') format('truetype'); /* Ensure the path is correct */
-    font-weight: normal;
-    font-style: normal;
-}
-
-header h1, header h2, header h3 {
-    font-family: 'Safira March', cursive; /* Apply Safira March font */
-    color: #fffbfa;
-    margin: 0.5rem 0;
-}
-
-header h1 {
-    font-family: 'EDLavonia', regular; /* Elegant calligraphy font */
-    font-size: 2.5rem; /* Smaller font size */
-    color: #fffbfa;
-    margin: 0.5rem 0;
-}
-
-header h2 {
-    font-size: 7rem; /* Increased font size for "Kenji & Tricia" */
-    color: #fffbfa;
-    margin: 0.5rem 0;
-}
-
-header h3 {
-    font-size: 2.5rem; /* Adjust font size for "October 3, 2025" */
+    overflow: hidden;
 }
 
 header::after {
@@ -127,679 +174,132 @@ header::after {
     left: 0;
     width: 100%;
     height: 20px;
-    background: #9eb1a9;
+    background: var(--sage-green);
     z-index: 1;
 }
 
-/* Welcome Section */
-.welcome {
-    background: #9eb1a9; /* Retain only the background color */
-    color: #fffbfa; /* White text */
-    padding: 3rem 1rem;
-    border-radius: 0 0 8px 8px;
-    margin-top: 0;
-    position: relative;
-    z-index: 0;
+header h1 {
+    font-family: 'EDLavonia', regular;
+    font-size: 2.5rem;
+    color: var(--white);
 }
 
-.welcome p {
-    font-size: 1.2rem;
-    line-height: 1.8;
-    margin-bottom: 1.5rem;
-    transition: all 0.5s ease;
+header h2 {
+    font-size: 7rem;
+    color: var(--white);
+    font-family: 'Safira March', regular; /* Changed to Safira March font */
 }
 
-blockquote {
-    font-style: italic;
-    color: #f7f4e9;
-    border-left: 4px solid #fffbfa; /* Updated from white */
-    padding-left: 10px;
-    margin: 20px 0;
-    transition: all 0.5s ease;
+header h3 {
+    font-size: 2.5rem;
+    font-family: 'Safira March', regular;
+    color: var(--white); /* Explicitly set color to match others */
 }
 
-/* Details Section */
-.details {
-    background: #f7f4e9; /* Retain only the background color */
-    color: #506369;
-    padding: 2rem 1rem;
-    border-radius: 8px;
-    text-align: center;
-}
-
-.details p {
-    font-size: 1.1rem;
-    line-height: 1.6;
-    margin-bottom: 1rem;
-    color: #506369;
-}
-
-.details h2::after {
-    background: #bf7e7e;
-}
-
-/* Attire Section */
-.attire {
-    background: #f7f4e9; /* Retain only the background color */
-    color: #506369;
-    padding: 2rem 1rem;
-    border-radius: 8px;
-    text-align: center;
-}
-
-.attire h2::after {
-    background: #bf7e7e;
-}
-
-.attire-subheading {
-    font-family: 'EDLavonia' , regular;
-    font-size: 2rem;
-    color: #bf7e7e;
-    margin: 1.5rem auto;
-}
-
-.color-samples {
-    display: flex;
-    justify-content: center;
-    gap: 1.5rem;
-    margin-top: 1rem;
-}
-
-.color-sample {
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.color-sample:hover {
-    transform: scale(1.1);
-    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
-}
-
-/* RSVP Section */
-.rsvp {
-    background: #9eb1a9; /* Retain only the background color */
-    color: #fffbfa;
-    padding: 2rem 1rem;
-    border-radius: 8px;
-    text-align: center;
-}
-
-.rsvp .button {
-    font-size: 1.1rem;
-    padding: 0.75rem 2rem;
-}
-
-.rsvp-button {
-    font-family: 'Lora', serif;
-    font-size: 1.2rem;
-    padding: 0.75rem 2rem;
-    background: #fffbfa; /* Updated from white */
-    color: #9eb1a9; /* Sage green text */
-    border: 2px solid #9eb1a9; /* Sage green border */
-    border-radius: 25px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-}
-
-.rsvp-button:hover {
-    background: #9eb1a9; /* Sage green background */
-    color: #fffbfa; /* White text */
-    transform: translateY(-3px); /* Slight lift effect */
-    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15); /* Enhanced shadow */
-}
-
-/* Gallery Section */
-.gallery {
-    background: #f7f4e9; /* Retain only the background color */
-    padding: 2rem 1rem;
-    border-radius: 8px;
-}
-
-.gallery-grid {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 1rem;
-}
-
-.gallery img {
+/* Header Decoration Image */
+.header-decoration-image {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
-    max-width: 300px;
-    border-radius: 15px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.gallery img:hover {
-    transform: scale(1.05);
-    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
-}
-
-/* Guestbook Section */
-.guestbook {
-    background: #9eb1a9; /* Retain only the background color */
-    color: #fffbfa;
-    padding: 2rem 1rem;
-    border-radius: 8px;
-    text-align: center;
-}
-
-.guestbook textarea {
-    width: 80%;
-    max-width: 500px;
-    height: 120px;
-    margin: 1rem 0;
-    border: 2px solid #9eb1a9;
-    border-radius: 8px;
-    padding: 0.75rem;
-    font-family: 'Lora', serif;
-    background-color: #f7f4e9;
-    background-image: url('https://www.transparenttextures.com/patterns/white-diamond.png');
-    background-repeat: repeat;
-}
-
-.guestbook button {
-    font-size: 1.1rem;
-    padding: 0.75rem 2rem;
-    background: #fffbfa;
-    color: #9eb1a9;
-    border-radius: 25px;
-    cursor: pointer;
-    border: 2px solid #fffbfa; /* Updated from white */
-}
-
-/* Countdown Timer */
-.countdown {
-    background: #9eb1a9;
-    padding: 2rem;
-    margin: 1rem auto 2rem;
-    max-width: 90%;
-    border-radius: 10px;
-    text-align: center;
-}
-
-.countdown-wrapper {
-    display: flex;
-    justify-content: center;
-    gap: 1.5rem;
-}
-
-.countdown-unit {
-    background: #fff;
-    padding: 1rem;
-    border-radius: 10px;
-    text-align: center;
-}
-
-.countdown-title {
-    font-family: 'Safira March', cursive; /* Match main header font */
-    font-size: 3rem; /* Adjust font size for emphasis */
-    color: #f7f4e9; /* Cream color */
-    text-align: center;
-    margin-bottom: 1rem;
-}
-
-footer {
-    background: #9eb1a9; /* Sage green background */
-    color: #fffbfa; /* Updated from white */
-    text-align: center;
-    padding: 1rem 1rem; /* Reduced padding to make footer smaller */
-    position: relative;
-    border-top: 2px solid ##9eb1a9; /* Updated from white */
-    background-image: url('https://www.transparenttextures.com/patterns/white-diamond.png'); /* Transparent texture */
-    background-size: 25px 25px; /* Smaller pattern size */
-    background-repeat: repeat; /* Ensure the pattern repeats */
-}
-
-footer p {
-    font-family: 'Lora', serif; /* Elegant serif font */
-    font-size: 1rem; /* Smaller font size */
-    margin: 0;
-    position: relative; /* Ensure text is above any decoration */
-    z-index: 1;
-}
-
-/* General Styles */
-body {
-    font-family: 'Cormorant Garamond', 'Lora', serif; /* More elegant serif font for body text */
-    color: #506369; /* Updated from #333 to #506369 */
-    background-color: #f7f4e9; /* Light cream background */
+    height: auto; /* Changed from 100% to auto to maintain aspect ratio */
     margin: 0;
     padding: 0;
+    object-fit: cover;
+    object-position: top center; /* Changed to top center to focus on the top */
+    z-index: 0;
+    display: block;
+    max-height: 25vh; /* Limit height to 25% of viewport height */
 }
 
-/* Typography */
-h1, h2, h3 {
-    font-family: 'Playfair Display', serif; /* Elegant serif font for headings */
-    font-weight: normal;
-    color: #2c3e50; /* Darker heading color */
+/* Header Content Positioning */
+header .featured-image, 
+header h1, 
+header h2, 
+header h3,
+header nav {
+    position: relative;
+    z-index: 1;
+}
+
+/* Featured Image */
+.featured-image {
+    position: relative;
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-bottom: 1.5rem;
+    border: 6px solid rgba(255, 251, 250, 0.5);
+    box-shadow: var(--shadow-lg);
+    transition: var(--transition-standard);
+}
+
+.featured-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.featured-image:hover {
+    transform: scale(1.05);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.3);
+}
+
+/*=================================
+  CONTENT SECTIONS
+==================================*/
+/* Section Styles */
+.details, .attire, .gallery {
+    background: var(--cream);
+    color: var(--text-dark);
+    padding: 2rem 1rem;
+    border-radius: 8px;
     text-align: center;
 }
 
-/* Typography - updating headers on cream backgrounds */
-h2 {
+.welcome, .rsvp, .guestbook {
+    background: var(--sage-green);
+    color: var(--white);
+    padding: 2rem 1rem;
+    text-align: center;
     position: relative;
-    display: inline-block;
-    margin-bottom: 1rem;
-    font-size: 3.5rem;
-    font-family: 'EDLavonia' , regular;
-    color: #fffbfa; /* Default sage green */
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
 }
 
 /* Headers in cream background sections */
 .details h2, .gallery h2, .attire h2 {
-    color: #bf7e7e; /* Blush pink */
+    color: var(--blush-pink);
 }
 
-h2::after {
-    content: '';
-    display: block;
-    width: 60%;
-    height: 2px;
-    background: #fffbfa; /* Updated from white */
-    margin: 0.5rem auto 0;
-}
-
-p {
-    font-family: 'Lora', serif; /* Elegant serif font for paragraphs */
-    line-height: 1.6;
-    font-size: 1.1em;
-    margin: 0 0 1em;
-    color: #506369; /* Added to ensure consistency */
-}
-
-/* Layout */
-.container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-    background: #ffffff; /* White content background */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-    border-radius: 8px; /* Rounded corners */
-}
-
-/* Buttons */
-button, .btn {
-    font-family: 'Georgia', serif;
-    background-color: #2c3e50; /* Dark button background */
-    color: #fffbfa;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-button:hover, .btn:hover {
-    background-color: #34495e; /* Slightly lighter on hover */
-}
-
-/* Links */
-a {
-    color: #2980b9; /* Elegant blue for links */
-    text-decoration: none;
-}
-
-a:hover {
-    text-decoration: underline;
-}
-
-/* Additional Styling */
-blockquote {
-    font-style: italic;
-    color: #7f8c8d; /* Subtle gray for quotes */
-    border-left: 4px solid #fffbfa; /* Updated from white */
-    padding-left: 10px;
-    margin: 20px 0;
+.details h2::after, .gallery h2::after, .attire h2::after {
+    background: var(--blush-pink);
 }
 
 /* Welcome Section */
 .welcome {
-    background: #9eb1a9; /* Retain only the background color */
-    color: #fffbfa; /* White text */
+    border-radius: 0 0 8px 8px;
+    margin-top: 0;
+    z-index: 0;
     padding: 3rem 1rem;
-    border-top-left-radius: 0; /* Remove top radius */
-    border-top-right-radius: 0; /* Remove top radius */
-    border-bottom-left-radius: 8px; /* Keep bottom radius */
-    border-bottom-right-radius: 8px; /* Keep bottom radius */
-    box-shadow: none;
-    margin-top: 0; /* Remove any top margin */
-    position: relative; /* For z-index if needed */
-    z-index: 0; /* Ensure it's behind the header's after element */
 }
 
 .welcome p {
-    font-size: 1.2rem; /* Slightly larger font size */
+    font-size: 1.2rem;
     line-height: 1.8;
     margin-bottom: 1.5rem;
-    transition: all 0.5s ease;
-}
-
-blockquote {
-    font-style: italic;
-    color: #f7f4e9; /* Light cream */
-    border-left: 4px solid #fffbfa; /* Updated from white */
-    padding-left: 10px;
-    margin: 20px 0;
-    transition: all 0.5s ease;
-}
-
-/* Wedding Details Section */
-.details {
-    background: #f7f4e9; /* Retain only the background color */
-    color: #506369; /* Updated from #333 to #506369 */
-    /* Removed border: 2px solid #9eb1a9; */
-    padding: 2rem 1rem;
-    border-radius: 8px;
-    box-shadow: none; /* Removed shadow */
-    text-align: center; /* Explicitly center all content in the details section */
-}
-
-.details p {
-    font-size: 1.1rem;
-    line-height: 1.6;
-    margin-bottom: 1rem;
-    margin-left: auto; /* Add auto margins to center paragraphs */
-    margin-right: auto;
-    color: #506369; /* Added to ensure consistency */
-    text-align: center; /* Ensure paragraph text is centered */
-}
-
-.details h2::after {
-    background: #bf7e7e; /* Blush pink line for consistency */
-}
-
-/* RSVP Section */
-.rsvp {
-    background: #9eb1a9; /* Retain only the background color */
-    color: #fffbfa; /* White text */
-    padding: 2rem 1rem;
-    border-radius: 0px;
-    box-shadow: none; /* Removed shadow */
-    text-align: center;
-}
-
-.rsvp p {
-    font-size: 1.2rem;
-    margin-bottom: 1.5rem;
-}
-
-.rsvp .button {
-    font-size: 1.1rem; /* Slightly larger button text */
-    padding: 0.75rem 2rem;
-}
-
-/* Photo Gallery Section */
-.gallery {
-    background: #f7f4e9; /* Retain only the background color */
-    padding: 2rem 1rem;
-    border-radius: 8px;
-    box-shadow: none; /* Removed shadow */
-}
-
-.gallery-grid {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 1rem;
-}
-
-.gallery img {
-    width: 100%;
-    max-width: 300px;
-    border-radius: 15px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.gallery img:hover {
-    transform: scale(1.05);
-    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
-}
-
-.gallery h2::after {
-    background: #bf7e7e; /* Blush pink line for consistency */
-}
-
-/* Guestbook Section */
-.guestbook {
-    background: #9eb1a9; /* Retain only the background color */
-    color: #fffbfa; /* White text */
-    padding: 2rem 1rem;
-    border-radius: 0px;
-    box-shadow: none; /* Removed shadow */
-    text-align: center;
-}
-
-.guestbook textarea {
-    width: 80%;
-    max-width: 500px;
-    height: 120px;
-    margin: 1rem 0;
-    border: 2px solid #9eb1a9; /* Sage green border */
-    border-radius: 8px;
-    padding: 0.75rem;
-    font-family: 'Lora', serif; /* Elegant serif font for textarea */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    background-color: #f7f4e9; /* Fallback light cream background */
-    background-image: url('https://www.transparenttextures.com/patterns/white-diamond.png');
-    background-repeat: repeat; /* Ensure the pattern repeats */
-    background-size: auto; /* Use the natural size of the pattern */
-}
-
-.guestbook button {
-    font-size: 1.1rem;
-    padding: 0.75rem 2rem;
-    background: #fffbfa; /* White background */
-    color: #9eb1a9; /* Sage green text */
-    border: 2px solid #fffbfa; /* Updated from white */
-    border-radius: 25px;
-    cursor: pointer;
-    font-family: 'Lora', serif;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.guestbook button:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
-    background: #9eb1a9; /* Sage green */
-    color: #fffbfa; /* White text */
-}
-
-/* Countdown Timer */
-.countdown {
-    background: #9eb1a9; /* Light cream background */
-    padding: 2rem;
-    margin: 1rem auto 2rem;
-    max-width: 90%;
-    border-radius: 10px;
-    position: relative;
-    /* Removed border: 2px solid #9eb1a9; */
-    color: #506369; /* Added to ensure consistency */
-}
-
-.countdown-wrapper {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 1.5rem;
-    color: #506369; /* Updated from #2c3e50 to #506369 */
-}
-
-.countdown-unit {
-    background: #f7f4e9;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 1rem;
-    border-radius: 10px;
-    min-width: 100px;
-    /* Removed border: 2px solid #9eb1a9; */
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-    position: relative;
-}
-
-.countdown-unit::after {
-    content: '';
-    position: absolute;
-    top: 5px;
-    left: 5px;
-    right: 5px;
-    bottom: 5px;
-    border: 1px solid #bf7e7e; /* Blush pink inner border */
-    border-radius: 7px;
-    opacity: 0.3;
-    pointer-events: none;
-}
-
-.countdown-unit span:first-child {
-    font-family: 'Playfair Display', serif;
-    font-size: 2.5rem;
-    font-weight: bold;
-    color: #9eb1a9; /* Sage green */
-}
-
-.unit-label {
-    font-family: 'Lora', serif;
-    font-size: 1rem;
-    margin-top: 0.5rem;
-    color: #bf7e7e; /* Blush pink */
-}
-
-@media (max-width: 768px) {
-    .countdown-wrapper {
-        gap: 1rem;
-    }
-    
-    .countdown-unit {
-        min-width: 80px;
-        padding: 0.8rem;
-    }
-    
-    .countdown-unit span:first-child {
-        font-size: 2rem;
-    }
-    
-    .countdown-title {
-        font-size: 2rem;
-    }
-}
-
-@media (max-width: 480px) {
-    .countdown-unit {
-        min-width: 60px;
-        padding: 0.5rem;
-    }
-    
-    .countdown-unit span:first-child {
-        font-size: 1.5rem;
-    }
-    
-    .unit-label {
-        font-size: 0.8rem;
-    }
-    
-    .countdown-title {
-        font-size: 1.8rem;
-    }
-}
-
-/* RESPONSIVE CSS */
-/*==================================*/
-
-/* For small screens (phones) */
-@media (max-width: 768px) {
-    header h1 {
-        font-size: 2.5rem; /* Reduce header font size */
-    }
-
-    nav {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    nav a {
-        margin: 0.3rem 0; /* Add spacing between links */
-        font-size: 1rem; /* Adjust font size */
-    }
-
-    .section {
-        padding: 2rem 1rem; /* Reduce padding */
-    }
-
-    .gallery img {
-        max-width: 100%; /* Ensure images fit within the screen */
-        margin: 0.5rem 0; /* Add spacing between images */
-    }
-
-    .countdown {
-        font-size: 1.2rem; /* Adjust countdown font size */
-        padding: 1rem; /* Reduce padding */
-    }
-
-    .guestbook textarea {
-        width: 90%; /* Adjust textarea width */
-    }
-
-    .button {
-        padding: 0.5rem 1rem; /* Reduce button padding */
-        font-size: 0.9rem; /* Adjust button font size */
-    }
-}
-
-/* For very small screens (e.g., older phones) */
-@media (max-width: 480px) {
-    header h1 {
-        font-size: 2rem; /* Further reduce header font size */
-    }
-
-    .section {
-        padding: 1.5rem 0.5rem; /* Further reduce padding */
-    }
-
-    .gallery img {
-        max-width: 100%; /* Ensure images fit within the screen */
-    }
-
-    .countdown {
-        font-size: 1rem; /* Further adjust countdown font size */
-    }
-
-    .button {
-        font-size: 0.8rem; /* Further adjust button font size */
-    }
 }
 
 /* Attire Section */
 .attire {
-    background: #f7f4e9; /* Retain only the background color */
-    color: #506369;
-    padding: 2rem 1rem;
-    border-radius: 8px;
-    box-shadow: none; /* Removed shadow */
-    text-align: center;
     position: relative;
     overflow: hidden;
 }
 
-.attire h2::after {
-    background: #bf7e7e; /* Blush pink line for consistency */
-}
-
 .attire-subheading {
-    font-family: 'EDLavonia' , regular;
+    font-family: 'EDLavonia', regular;
     font-size: 2rem;
-    color: #bf7e7e; /* Blush pink to match other sections */
+    color: var(--blush-pink);
     margin: 1.5rem auto;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.15);
 }
@@ -826,7 +326,6 @@ blockquote {
 .color-samples {
     display: flex;
     justify-content: center;
-    /* flex-wrap: wrap; */
     gap: 1.5rem;
     margin-top: 1rem;
 }
@@ -838,10 +337,9 @@ blockquote {
     display: flex;
     justify-content: center;
     align-items: center;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: var(--shadow-md);
     position: relative;
-    /* Simple hover effect without animations */
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: var(--transition-standard);
 }
 
 .color-sample:hover {
@@ -854,92 +352,169 @@ blockquote {
     bottom: -25px;
     font-family: 'Lora', serif;
     font-size: 0.9rem;
-    color: #506369;
+    color: var(--text-dark);
 }
 
-/* For small screens (phones) */
-@media (max-width: 768px) {
-    .color-samples {
-        gap: 1rem;
-    }
-    
-    .color-sample {
-        width: 60px;
-        height: 60px;
-    }
-    
+/* RSVP Section */
+.rsvp {
+    border-radius: 0px;
 }
 
-/* Decorative Graphics - Updated with reliable sources */
-.decorative-background {
-    position: fixed;
-    top: 0;
-    left: 0;
+.rsvp p {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+    color: var(--text-dark); /* Changed from white to text-dark */
+}
+
+.rsvp-button {
+    font-family: 'Lora', serif;
+    font-size: 1.2rem;
+    padding: 0.75rem 2rem;
+    background: var(--white);
+    color: var (--sage-green);
+    border: 2px solid var(--sage-green);
+    border-radius: 25px;
+    cursor: pointer;
+    transition: var(--transition-standard);
+    box-shadow: var(--shadow-md);
+}
+
+.rsvp-button:hover {
+    background: var(--sage-green);
+    color: var(--white);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Gallery Section */
+.gallery-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.gallery img {
     width: 100%;
-    height: 100%;
-    background-size: 400px;
-    opacity: 0.03;
-    pointer-events: none;
-    z-index: -1;
+    max-width: 300px;
+    border-radius: 15px;
+    box-shadow: var(--shadow-md);
+    transition: var(--transition-standard);
 }
 
-.header-decoration {
-    position: absolute;
-    width: 250px;
-    height: 150px;
-    background-size: contain;
-    background-repeat: no-repeat;
-    opacity: 0.8;
+.gallery img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
 }
 
-.header-decoration.left {
-    top: 10px;
-    left: 10px;
-    background-image: url('https://www.clipartmax.com/png/full/57-577815_flowers-scalable-vector-graphics-watercolor-painting-blush-and-navy-flower-png.png');
+/* Guestbook Section */
+.guestbook {
+    border-radius: 0px;
 }
 
-.header-decoration.right {
-    top: 10px;
-    right: 10px;
-    background-image: url('https://www.clipartmax.com/png/full/57-577815_flowers-scalable-vector-graphics-watercolor-painting-blush-and-navy-flower-png.png');
-    transform: scaleX(-1);
+.guestbook textarea {
+    width: 80%;
+    max-width: 500px;
+    height: 120px;
+    margin: 1rem 0;
+    border: 2px solid var(--sage-green);
+    border-radius: 8px;
+    padding: 0.75rem;
+    font-family: 'Lora', serif;
+    box-shadow: var(--shadow-sm);
+    background-color: var(--cream);
+    background-image: url('https://www.transparenttextures.com/patterns/white-diamond.png');
+    background-repeat: repeat;
+    background-size: auto;
 }
 
-.divider {
+.guestbook button {
+    font-size: 1.1rem;
+    padding: 0.75rem 2rem;
+    background: var(--white);
+    color: var(--sage-green);
+    border: 2px solid var(--white);
+    border-radius: 25px;
+    cursor: pointer;
+    font-family: 'Lora', serif;
+    box-shadow: var(--shadow-md);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.guestbook button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+    background: var(--sage-green);
+    color: var(--white);
+}
+
+/* Countdown Timer */
+.countdown {
+    background: var(--sage-green);
+    padding: 2rem;
+    margin: 1rem auto 2rem;
+    max-width: 90%;
+    border-radius: 10px;
+    position: relative;
+    color: var(--text-dark);
+}
+
+.countdown-title {
+    font-family: 'Safira March', cursive;
+    font-size: 3rem;
+    color: var(--cream);
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.countdown-wrapper {
     display: flex;
     justify-content: center;
-    margin: 2rem 0;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    color: var(--text-dark);
 }
 
-.divider img {
-    max-width: 300px;
-    opacity: 0.6;
-}
-
-/* Removed .corner-decoration styles */
-
-.footer-decoration {
-    display: none; /* Remove the image */
-}
-
-/* Make sections relative for corner decorations */
-footer {
+.countdown-unit {
+    background: var(--cream);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    border-radius: 10px;
+    min-width: 100px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
     position: relative;
 }
 
-/* Adjustments for mobile */
-@media (max-width: 768px) {
-    .header-decoration, .corner-decoration {
-        width: 60px;
-        height: 60px;
-    }
-    
-    .divider img {
-        max-width: 200px;
-    }
+.countdown-unit::after {
+    content: '';
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    right: 5px;
+    bottom: 5px;
+    border: 1px solid var(--blush-pink);
+    border-radius: 7px;
+    opacity: 0.3;
+    pointer-events: none;
 }
 
-/* CSS-only Divider - Replacing image-based dividers */
+.countdown-unit span:first-child {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: var(--sage-green);
+}
+
+.unit-label {
+    font-family: 'Lora', serif;
+    font-size: 1rem;
+    margin-top: 0.5rem;
+    color: var(--blush-pink);
+}
+
+/* Divider */
 .divider {
     display: flex;
     align-items: center;
@@ -952,60 +527,8 @@ footer {
 .divider::after {
     content: '';
     flex: 1;
-    border-bottom: 1px solid rgba(212, 175, 55, 0.7); /* Gold color */
-}
-
-.divider::before {
-    margin-right: 1.5rem;
-}
-
-.divider::after {
-    margin-left: 1.5rem;
-}
-
-.divider-icon {
-    font-size: 1.5rem;
-    color: rgba(212, 175, 55, 0.9); /* Gold color, more opaque */
-    padding: 0 1rem;
-    position: relative;
-}
-
-.divider-icon::before {
-    content: '❧'; /* Fleuron left */
-    display: inline-block;
-    margin: 0 8px;
-}
-
-.divider-icon::after {
-    content: '❦'; /* Fleuron right */
-    display: inline-block;
-    margin: 0 8px;
-}
-
-/* Add center symbol to the divider */
-.divider-icon span {
-    display: inline-block;
-    font-size: 1.2rem;
-    margin: 0 8px;
-    color: rgba(212, 175, 55, 1); /* Solid gold */
-    transform: scale(1.2);
-}
-
-/* Enhanced Metallic Gold Divider */
-.divider {
-    display: flex;
-    align-items: center;
-    text-align: center;
-    margin: 2.5rem 0;
-    height: 40px;
-}
-
-.divider::before,
-.divider::after {
-    content: '';
-    flex: 1;
-    border-bottom: 1px solid transparent; /* Transparent base */
-    background: linear-gradient(to right, rgba(212, 175, 55, 0.3), rgba(212, 175, 55, 0.9), rgba(212, 175, 55, 0.3)); /* Metallic gold gradient */
+    border-bottom: 1px solid transparent;
+    background: linear-gradient(to right, rgba(212, 175, 55, 0.3), rgba(212, 175, 55, 0.9), rgba(212, 175, 55, 0.3));
     height: 1px;
 }
 
@@ -1022,7 +545,6 @@ footer {
     padding: 0 1rem;
     position: relative;
     text-shadow: 0px 1px 1px rgba(0,0,0,0.1);
-    /* Metallic gold text gradient */
     background: linear-gradient(to bottom, #f8de8c 0%, #d4af37 50%, #c5a028 51%, #f0d171 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -1031,18 +553,17 @@ footer {
 }
 
 .divider-icon::before {
-    content: '❧'; /* Fleuron left */
+    content: '❧';
     display: inline-block;
     margin: 0 8px;
 }
 
 .divider-icon::after {
-    content: '❦'; /* Fleuron right */
+    content: '❦';
     display: inline-block;
     margin: 0 8px;
 }
 
-/* Add center symbol to the divider with enhanced gold effect */
 .divider-icon span {
     display: inline-block;
     font-size: 1.2rem;
@@ -1056,99 +577,219 @@ footer {
     text-shadow: 0px 2px 2px rgba(0,0,0,0.1);
 }
 
-.header-decoration {
-    position: absolute;
-    background-size: contain;
-    background-repeat: no-repeat;
-    opacity: 0.8;
-    transition: all 0.3s ease; /* Smooth resizing */
-}
-
-.header-decoration.left {
-    top: 10px;
-    left: 10px;
-    background-image: url('https://www.clipartmax.com/png/full/57-577815_flowers-scalable-vector-graphics-watercolor-painting-blush-and-navy-flower-png.png');
-}
-
-.header-decoration.right {
-    top: 10px;
-    right: 10px;
-    background-image: url('https://www.clipartmax.com/png/full/57-577815_flowers-scalable-vector-graphics-watercolor-painting-blush-and-navy-flower-png.png');
-    transform: scaleX(-1);
-}
-
-/* Responsive adjustments for corner images */
-@media (max-width: 768px) {
-    .header-decoration {
-        width: 100px;
-        height: 100px;
-    }
-
-    .header-decoration.left {
-        top: 20px;
-        left: 20px;
-    }
-
-    .header-decoration.right {
-        top: 20px;
-        right: 20px;
-    }
-}
-
-@media (max-width: 480px) {
-    .header-decoration {
-        width: 60px;
-        height: 60px;
-    }
-
-    .header-decoration.left {
-        top: 10px;
-        left: 10px;
-    }
-
-    .header-decoration.right {
-        top: 10px;
-        right: 10px;
-    }
-}
-
-/* Featured Image Styling */
-.featured-image {
+/* Footer */
+footer {
+    background: var(--sage-green);
+    color: var(--white);
+    text-align: center;
+    padding: 1rem;
     position: relative;
-    width: 220px;
-    height: 220px;
-    border-radius: 50%;
-    overflow: hidden;
-    margin-bottom: 1.5rem;
-    border: 6px solid rgba(255, 251, 250, 0.5); /* Updated from white with opacity */
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-top: 2px solid var(--sage-green);
+    background-image: url('https://www.transparenttextures.com/patterns/white-diamond.png');
+    background-size: 25px 25px;
+    background-repeat: repeat;
 }
 
-.featured-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
+footer p {
+    font-family: 'Lora', serif;
+    font-size: 1rem;
+    margin: 0;
+    position: relative;
+    z-index: 1;
+    color: var(--white);
 }
 
-.featured-image:hover {
-    transform: scale(1.05);
-    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.3);
+/*=================================
+  RESPONSIVE DESIGN
+==================================*/
+/* For screens larger than 992px */
+@media (min-width: 992px) {
+    .header-decoration-image {
+        max-height: 25vh;
+        width: 100%;
+    }
 }
 
-/* Responsive adjustments for the featured image */
+/* For tablets and medium screens */
+@media (max-width: 992px) {
+    header h2 {
+        font-size: 6rem;
+    }
+    
+    .color-samples {
+        flex-wrap: wrap;
+    }
+    
+    .header-decoration-image {
+        max-height: 20vh;
+        width: 100%;
+    }
+}
+
+/* For small tablets and large phones */
 @media (max-width: 768px) {
+    /* Navigation */
+    nav {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav a {
+        margin: 0.3rem 0;
+        font-size: 0.95rem;
+    }
+    
+    nav a .material-icons {
+        font-size: 1.1rem;
+    }
+    
+    /* Header */
+    header h1 {
+        font-size: 2.5rem;
+    }
+    
+    header h2 {
+        font-size: 4.5rem;
+    }
+    
+    header h3 {
+        font-size: 2rem;
+    }
+    
+    /* Featured Image */
     .featured-image {
         width: 180px;
         height: 180px;
     }
+    
+    /* Header Decoration */
+    .header-decoration-image {
+        max-height: 15vh;
+        width: 100%;
+        object-position: top center;
+    }
+    
+    /* Countdown */
+    .countdown-wrapper {
+        gap: 1rem;
+    }
+    
+    .countdown-unit {
+        min-width: 80px;
+        padding: 0.8rem;
+    }
+    
+    .countdown-unit span:first-child {
+        font-size: 2rem;
+    }
+    
+    .countdown-title {
+        font-size: 2rem;
+    }
+    
+    /* Attire Colors */
+    .color-samples {
+        gap: 1rem;
+    }
+    
+    .color-sample {
+        width: 60px;
+        height: 60px;
+    }
+    
+    /* Gallery */
+    .gallery img {
+        margin: 0.5rem 0;
+    }
+    
+    /* Forms */
+    .guestbook textarea {
+        width: 90%;
+    }
+    
+    /* Buttons */
+    .button {
+        padding: 0.5rem 1rem;
+        font-size: 0.9rem;
+    }
 }
 
+/* For phones */
 @media (max-width: 480px) {
+    /* Header */
+    header h1 {
+        font-size: 2rem;
+    }
+    
+    header h2 {
+        font-size: 3.5rem;
+    }
+    
+    header h3 {
+        font-size: 1.8rem;
+    }
+    
+    /* Featured Image */
     .featured-image {
         width: 150px;
         height: 150px;
         border-width: 4px;
+    }
+    
+    /* Header Image */
+    .header-decoration-image {
+        max-height: 12vh;
+        width: 100%;
+        object-position: top center;
+    }
+    
+    /* Countdown */
+    .countdown-unit {
+        min-width: 60px;
+        padding: 0.5rem;
+    }
+    
+    .countdown-unit span:first-child {
+        font-size: 1.5rem;
+    }
+    
+    .unit-label {
+        font-size: 0.8rem;
+    }
+    
+    .countdown-title {
+        font-size: 1.8rem;
+    }
+    
+    /* Buttons */
+    .button {
+        font-size: 0.8rem;
+    }
+}
+
+/* iPhone 12, Samsung Galaxy S8, and similar-sized devices */
+@media (max-width: 414px) and (min-width: 320px) {
+    .header-decoration-image {
+        max-height: 10vh;
+        width: 100%;
+        transform: none; /* Remove the scale transform */
+    }
+    
+    header {
+        background-color: var(--sage-green);
+    }
+}
+
+/* Very small devices */
+@media (max-width: 320px) {
+    .header-decoration-image {
+        max-height: 8vh;
+        width: 100%;
+        transform: none; /* Remove the scale transform */
+    }
+    
+    header h2 {
+        font-size: 3rem;
     }
 }
