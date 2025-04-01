@@ -186,7 +186,7 @@ header h1 {
 
 header h2 {
     font-size: 7rem;
-    color: var(--white);
+    color: var (--white);
     font-family: 'Safira March', regular; /* Changed to Safira March font */
 }
 
@@ -205,11 +205,42 @@ header h3 {
     height: auto; /* Changed from 100% to auto to maintain aspect ratio */
     margin: 0;
     padding: 0;
-    object-fit: cover;
+    object-fit: cover; /* Changed back to cover to fill width */
     object-position: top center; /* Changed to top center to focus on the top */
     z-index: 0;
     display: block;
-    max-height: 25vh; /* Limit height to 25% of viewport height */
+    max-height: 20vh;
+}
+
+/* Desktop vs Mobile image display rules */
+.desktop-only {
+    display: none; /* Hidden by default */
+}
+
+.mobile-only {
+    display: block; /* Shown by default */
+}
+
+/* For tablets and larger screens */
+@media (min-width: 768px) {
+    .desktop-only {
+        display: block; /* Show HD image on larger screens */
+        max-height: 20vh;
+        width: 100%;
+    }
+    
+    .mobile-only {
+        display: none; /* Hide regular image on larger screens */
+    }
+}
+
+/* For large screens and laptops */
+@media (min-width: 1200px) {
+    .desktop-only {
+        max-height: none; /* Allow natural height */
+        width: 100%;
+        object-fit: cover;
+    }
 }
 
 /* Header Content Positioning */
@@ -328,6 +359,10 @@ header nav {
     justify-content: center;
     gap: 1.5rem;
     margin-top: 1rem;
+    flex-wrap: nowrap; /* Prevent wrapping */
+    overflow-x: auto; /* Allow horizontal scrolling if needed */
+    padding: 0.5rem 0 2rem; /* Add padding for better mobile view */
+    -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
 }
 
 .color-sample {
@@ -363,7 +398,7 @@ header nav {
 .rsvp p {
     font-size: 1.2rem;
     margin-bottom: 1.5rem;
-    color: var(--text-dark); /* Changed from white to text-dark */
+    color: var (--text-dark); /* Changed from white to text-dark */
 }
 
 .rsvp-button {
@@ -371,7 +406,7 @@ header nav {
     font-size: 1.2rem;
     padding: 0.75rem 2rem;
     background: var(--white);
-    color: var (--sage-green);
+    color: var(--sage-green); /* Fixed syntax - removed space */
     border: 2px solid var(--sage-green);
     border-radius: 25px;
     cursor: pointer;
@@ -690,12 +725,8 @@ footer p {
     
     /* Attire Colors */
     .color-samples {
-        gap: 1rem;
-    }
-    
-    .color-sample {
-        width: 60px;
-        height: 60px;
+        justify-content: center; /* Start alignment for horizontal scrolling */
+        padding-left: 1rem; /* Add left padding for better appearance */
     }
     
     /* Gallery */
