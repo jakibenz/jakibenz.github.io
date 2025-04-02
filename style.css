@@ -439,7 +439,7 @@ header nav {
 
 .gallery img {
     width: 100%;
-    /* max-width: 300px; */
+    max-width: 100%;
     border-radius: 15px;
     box-shadow: var(--shadow-md);
     transition: var(--transition-standard);
@@ -558,6 +558,8 @@ header nav {
         position: absolute;
         top: 50%;
         transform: translateY(-50%);
+        z-index: 10;
+        background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
     }
     
     .prev-btn {
@@ -579,14 +581,47 @@ header nav {
     }
 }
 
+/* For small phones - adjust gallery sizing */
 @media (max-width: 480px) {
     .gallery-nav {
-        width: 40px;
-        height: 40px;
+        width: 35px;
+        height: 35px;
     }
     
     .gallery-nav .material-icons {
-        font-size: 24px;
+        font-size: 20px;
+    }
+    
+    .gallery-frame {
+        max-width: 95%; /* Use more screen space on very small screens */
+    }
+    
+    .gallery-images {
+        aspect-ratio: 1/1; /* Square frame on very small screens */
+    }
+    
+    .gallery-indicators {
+        bottom: 5px; /* Move indicators closer to image bottom */
+    }
+    
+    .indicator {
+        width: 8px;
+        height: 8px;
+    }
+}
+
+/* Very small devices - minimize gallery */
+@media (max-width: 320px) {
+    .gallery-container {
+        margin: 1rem auto;
+    }
+    
+    .gallery-frame {
+        border-radius: 10px; /* Smaller radius on tiny screens */
+    }
+    
+    .gallery-images img {
+        border-radius: 10px;
     }
 }
 
@@ -1038,11 +1073,6 @@ footer p {
     .color-samples {
         justify-content: center; /* Start alignment for horizontal scrolling */
         padding-left: 1rem; /* Add left padding for better appearance */
-    }
-    
-    /* Gallery */
-    .gallery img {
-        margin: 0.5rem 0;
     }
     
     /* Forms */
