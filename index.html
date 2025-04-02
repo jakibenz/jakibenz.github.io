@@ -25,7 +25,7 @@
         <h2 class="wow animate__animated animate__fadeInDown">Kenji & Tricia</h2>
         <h3 class="wow animate__animated animate__fadeInDown">October 3, 2025</h3>
         <nav>
-            <a href="#welcome"><span class="material-icons">home</span> Welcome</a>
+            <a href="#welcome"><span class="material-icons">home</span> Our Story</a>
             <a href="#details"><span class="material-icons">event</span> Details</a>
             <a href="#attire"><span class="material-icons">checkroom</span> Attire</a>
             <a href="#rsvp"><span class="material-icons">check_circle</span> RSVP</a>
@@ -35,7 +35,7 @@
     </header>
 
     <section id="welcome" class="welcome">
-        <h2 class="wow animate__animated animate__fadeInUp" data-wow-duration="1.5s">Welcome</h2>
+        <h2 class="wow animate__animated animate__fadeInUp" data-wow-duration="1.5s">Our Story</h2>
         <p class="wow animate__animated animate__fadeInUp" data-wow-duration="1.5s" data-wow-delay="0.3s">We are so excited to share this special moment with you. Join us as we celebrate our love and commitment.</p>
         <blockquote class="wow animate__animated animate__fadeInUp" data-wow-duration="1.5s" data-wow-delay="0.5s">"Love is not about how many days, months, or years you have been together. Love is about how much you love each other every single day."</blockquote>
         <h3 class="countdown-title wow animate__animated animate__fadeInUp" data-wow-duration="1.5s" data-wow-delay="0.7s">Countdown to Forever</h3>
@@ -69,7 +69,7 @@
         <div class="divider-icon"><span>✦</span></div>
     </div>
 
-    <section id="details" class="details wow animate__animated animate__fadeIn">
+    <section id="details" class="details wow animate__animated animate__fadeIn" data-wow-duration="1.5s" data-wow-delay="0.2s">
         <h2>Wedding Details</h2>
         <p><strong>Date:</strong> October 3, 2025</p>
         <p><strong>Time:</strong> 2:00 PM</p>
@@ -81,7 +81,63 @@
         <div class="divider-icon"><span>✦</span></div>
     </div>
 
-    <section id="attire" class="attire wow animate__animated animate__fadeIn">
+    <section id="timeline" class="timeline wow animate__animated animate__fadeIn" data-wow-duration="1.5s">
+        <h2>Wedding Day Timeline</h2>
+        <div class="timeline-container">
+            <div class="timeline-line"></div>
+            
+            <div class="timeline-event wow animate__animated animate__fadeInLeft" data-wow-delay="0.2s">
+                <div class="timeline-dot"><span class="material-icons">church</span></div>
+                <div class="timeline-content">
+                    <h3>2:00 PM</h3>
+                    <h4>Ceremony</h4>
+                    <p>St. John Marie Vianney Parish Church</p>
+                </div>
+            </div>
+            
+            <div class="timeline-event wow animate__animated animate__fadeInRight" data-wow-delay="0.4s">
+                <div class="timeline-dot"><span class="material-icons">photo_camera</span></div>
+                <div class="timeline-content">
+                    <h3>3:00 PM</h3>
+                    <h4>Photo Session</h4>
+                    <p>Group photos with family and friends</p>
+                </div>
+            </div>
+            
+            <div class="timeline-event wow animate__animated animate__fadeInLeft" data-wow-delay="0.6s">
+                <div class="timeline-dot"><span class="material-icons">local_bar</span></div>
+                <div class="timeline-content">
+                    <h3>4:00 PM</h4>
+                    <h4>Cocktail Hour</h4>
+                    <p>Enjoy drinks and appetizers</p>
+                </div>
+            </div>
+            
+            <div class="timeline-event wow animate__animated animate__fadeInRight" data-wow-delay="0.8s">
+                <div class="timeline-dot"><span class="material-icons">restaurant</span></div>
+                <div class="timeline-content">
+                    <h3>5:00 PM</h3>
+                    <h4>Reception</h4>
+                    <p>Farm Hills Garden</p>
+                </div>
+            </div>
+            
+            <div class="timeline-event wow animate__animated animate__fadeInLeft" data-wow-delay="1.0s">
+                <div class="timeline-dot"><span class="material-icons">celebration</span></div>
+                <div class="timeline-content">
+                    <h3>9:00 PM</h3>
+                    <h4>Afterparty</h4>
+                    <p>*Fun continues at the cafe beside the pavilion after 10 PM</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="divider">
+        <div class="divider-icon"><span>✦</span></div>
+    </div>
+
+    <section id="attire" class="attire wow animate__animated animate__fadeIn" data-wow-duration="1.5s" data-wow-delay="0.2s">
         <h2>Attire</h2>
         <p>We kindly encourage our guests to wear these colors for our special day</p>
         
@@ -109,22 +165,38 @@
         <div class="divider-icon"><span>✦</span></div>
     </div>
 
-    <section id="rsvp" class="rsvp wow animate__animated animate__fadeInRight">
+    <section id="rsvp" class="rsvp wow animate__animated animate__fadeInDown" data-wow-duration="1s" data-wow-delay="0.2s">
         <h2>RSVP</h2>
         <p>We would love to know if you can make it!</p>
+        <p class="rsvp-deadline">Let us know by September 10</p>
         <button class="rsvp-button" onclick="window.location.href='https://forms.google.com'">RSVP Now</button>
     </section>
 
     <section id="gallery" class="gallery wow animate__animated animate__fadeInUp">
         <h2>Photo Gallery</h2>
         <p>Take a look at some of our favorite moments together.</p>
-        <div class="gallery-grid">
-            <img src="https://picsum.photos/300/300?random=1" alt="Photo 1">
-            <img src="https://picsum.photos/300/300?random=2" alt="Photo 2">
-            <img src="https://picsum.photos/300/300?random=3" alt="Photo 3">
-            <img src="https://picsum.photos/300/300?random=4" alt="Photo 4">
-            <img src="https://picsum.photos/300/300?random=5" alt="Photo 5">
-            <img src="https://picsum.photos/300/300?random=6" alt="Photo 6">
+        <div class="gallery-container">
+            <button class="gallery-nav prev-btn" aria-label="Previous photo">
+                <span class="material-icons">chevron_left</span>
+            </button>
+            
+            <div class="gallery-frame">
+                <div class="gallery-images">
+                    <img src="https://picsum.photos/600/400?random=1" alt="Photo 1" class="active">
+                    <img src="https://picsum.photos/600/400?random=2" alt="Photo 2">
+                    <img src="https://picsum.photos/600/400?random=3" alt="Photo 3">
+                    <img src="https://picsum.photos/600/400?random=4" alt="Photo 4">
+                    <img src="https://picsum.photos/600/400?random=5" alt="Photo 5">
+                    <img src="https://picsum.photos/600/400?random=6" alt="Photo 6">
+                </div>
+                <div class="gallery-indicators">
+                    <!-- Indicators will be added by JavaScript -->
+                </div>
+            </div>
+            
+            <button class="gallery-nav next-btn" aria-label="Next photo">
+                <span class="material-icons">chevron_right</span>
+            </button>
         </div>
     </section>
 
@@ -176,6 +248,51 @@
         const countdownInterval = setInterval(updateCountdown, 1000);
         // Initial call to display the countdown immediately  
         updateCountdown();
+
+        // Gallery Navigation
+        document.addEventListener('DOMContentLoaded', function() {
+            const prevBtn = document.querySelector('.prev-btn');
+            const nextBtn = document.querySelector('.next-btn');
+            const galleryImages = document.querySelectorAll('.gallery-images img');
+            const indicators = document.querySelector('.gallery-indicators');
+            let currentIndex = 0;
+            
+            // Create indicators
+            galleryImages.forEach((img, index) => {
+                const dot = document.createElement('span');
+                dot.classList.add('indicator');
+                if (index === 0) dot.classList.add('active');
+                dot.addEventListener('click', () => {
+                    currentIndex = index;
+                    updateGallery();
+                });
+                indicators.appendChild(dot);
+            });
+            
+            // Update the displayed image and indicators
+            function updateGallery() {
+                galleryImages.forEach((img, index) => {
+                    img.classList.toggle('active', index === currentIndex);
+                });
+                
+                const indicatorDots = document.querySelectorAll('.indicator');
+                indicatorDots.forEach((dot, index) => {
+                    dot.classList.toggle('active', index === currentIndex);
+                });
+            }
+            
+            // Previous button handler
+            prevBtn.addEventListener('click', () => {
+                currentIndex = (currentIndex - 1 + galleryImages.length) % galleryImages.length;
+                updateGallery();
+            });
+            
+            // Next button handler
+            nextBtn.addEventListener('click', () => {
+                currentIndex = (currentIndex + 1) % galleryImages.length;
+                updateGallery();
+            });
+        });
     </script>
 </body>
 </html>
