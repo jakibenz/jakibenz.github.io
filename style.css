@@ -804,7 +804,7 @@ footer {
     padding: 1rem;
     position: relative;
     border-top: 2px solid var(--sage-green);
-    background-image: url('https://www.transparenttextures.com/patterns/white-diamond.png');
+    /* background-image: url('https://www.transparenttextures.com/patterns/white-diamond.png'); */
     background-size: 25px 25px;
     background-repeat: repeat;
 }
@@ -815,7 +815,7 @@ footer p {
     margin: 0;
     position: relative;
     z-index: 1;
-    color: var(--white);
+    color: var(--cream);
 }
 
 /* Timeline Section */
@@ -825,6 +825,7 @@ footer p {
     padding: 2rem 1rem;
     border-radius: 8px;
     text-align: center;
+    overflow: hidden; /* Prevent animation overflow issues */
 }
 
 .timeline h2 {
@@ -857,6 +858,8 @@ footer p {
     margin-bottom: 3rem;
     display: flex;
     align-items: center;
+    will-change: transform, opacity; /* Performance optimization */
+    backface-visibility: hidden; /* Prevent flickering */
 }
 
 .timeline-event:nth-child(odd) {
@@ -927,7 +930,8 @@ footer p {
 }
 
 /* Responsive Adjustments for Timeline */
-@media (max-width: 768px) {
+@media (max-width: 767px) {
+    /* Change the breakpoint from 768px to 767px to keep alternating layout at exactly 768px */
     .timeline-line {
         left: 30px;
     }
@@ -955,8 +959,91 @@ footer p {
     .timeline-event:nth-child(odd) .timeline-content {
         text-align: center;
     }
+
+    .timeline-content h3 {
+        font-size: 1.1rem; /* Slightly smaller font size for better readability */
+    }
+
+    .timeline-content h4 {
+        font-size: 1.2rem; /* Slightly smaller font size */
+    }
+
+    .timeline-content p {
+        font-size: 0.95rem; /* Adjust paragraph font size */
+    }
 }
 
+/* Special breakpoint for exactly 768px devices to ensure alternating timeline */
+@media (min-width: 768px) and (max-width: 768px) {
+    .timeline-event {
+        margin-bottom: 2.5rem;
+    }
+    
+    .timeline-event:nth-child(odd) {
+        flex-direction: row-reverse;
+    }
+    
+    .timeline-event:nth-child(even) {
+        flex-direction: row;
+    }
+    
+    .timeline-dot {
+        width: 50px;
+        height: 50px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    
+    .timeline-line {
+        left: 50%;
+    }
+    
+    .timeline-content {
+        width: 45%;
+        padding: 0.75rem;
+    }
+    
+    .timeline-event:nth-child(odd) .timeline-content {
+        margin-right: auto;
+        margin-left: 0;
+        text-align: right;
+    }
+    
+    .timeline-event:nth-child(even) .timeline-content {
+        margin-left: auto;
+        margin-right: 0;
+        text-align: left;
+    }
+}
+
+@media (max-width: 480px) {
+    .timeline-dot {
+        width: 35px;
+        height: 35px;
+    }
+    
+    .timeline-dot .material-icons {
+        font-size: 18px;
+    }
+    
+    .timeline-content {
+        padding: 0.6rem;
+    }
+    
+    .timeline-content h3 {
+        font-size: 1rem; /* Smaller font size for time */
+    }
+    
+    .timeline-content h4 {
+        font-size: 1.1rem; /* Smaller font size for event title */
+    }
+    
+    .timeline-content p {
+        font-size: 0.8rem; /* Smaller font size for description */
+    }
+}
+
+/* For small phones */
 @media (max-width: 480px) {
     .timeline-dot {
         width: 40px;
