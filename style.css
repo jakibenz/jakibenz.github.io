@@ -52,6 +52,8 @@
     src: url('./fonts/EDLavonia-Regular.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
+
+    
 }
 
 /*=================================
@@ -252,13 +254,13 @@ header nav {
 /* Featured Image */
 .featured-image {
     position: relative;
-    width: 220px;
-    height: 220px;
-    border-radius: var(--border-radius-circle);
+    width: 450px;
+    height: 300px;
+    /* border-radius: var(--border-radius-circle); */
     overflow: hidden;
     margin-bottom: 1.5rem;
     border: 6px solid rgba(255, 251, 250, 0.5);
-    box-shadow: var(--shadow-lg);
+    /* box-shadow: var(--shadow-lg); */
     transition: var(--transition-standard);
 }
 
@@ -292,6 +294,7 @@ header nav {
     padding: 2rem 1rem;
     text-align: center;
     position: relative;
+    overflow: hidden;
 }
 
 /* Headers in cream background sections */
@@ -810,18 +813,19 @@ footer p {
 
 .timeline-content h3 {
     font-family: var(--font-lavonia);
-    font-size: 1.5rem;
-    color: var(--sage-green);
+    font-size: 2.5rem;
+    color: var(--blush-pink);
     margin: 0 0 0.5rem;
     text-align: inherit;
 }
 
 .timeline-content h4 {
     font-family: var(--font-safira);
-    font-size: 1.8rem;
-    color: var(--blush-pink);
+    font-size: 1.5rem;
+    color: var(--sage-green);
     margin: 0 0 0.5rem;
     text-align: inherit;
+    font-weight: normal;
 }
 
 .timeline-content p {
@@ -908,8 +912,8 @@ footer p {
     
     /* Featured Image */
     .featured-image {
-        width: 180px;
-        height: 180px;
+        width: 300px;
+        height: 200px;
     }
     
     /* Header Decoration */
@@ -1010,11 +1014,11 @@ footer p {
     }
 
     .timeline-content h3 {
-        font-size: 1.1rem;
+        font-size: 1.8rem;
     }
 
     .timeline-content h4 {
-        font-size: 1.2rem;
+        font-size: 1.3rem;
     }
 
     .timeline-content p {
@@ -1125,8 +1129,8 @@ footer p {
     
     /* Featured Image */
     .featured-image {
-        width: 150px;
-        height: 150px;
+        width: 200px;
+        height: 134px;
         border-width: 4px;
     }
     
@@ -1200,11 +1204,11 @@ footer p {
     }
     
     .timeline-content h3 {
-        font-size: 1.3rem;
+        font-size: 1.8rem;
     }
     
     .timeline-content h4 {
-        font-size: 1.5rem;
+        font-size: 1.2rem;
     }
 }
 
