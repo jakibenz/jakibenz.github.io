@@ -177,6 +177,9 @@
                     <div class="color-sample animate-color" style="background-color: #d5b690; animation-delay: 0.3s"><span>Cream</span></div>
                     <div class="color-sample animate-color" style="background-color: #c2b19c; animation-delay: 0.4s"><span>Tan</span></div>
                 </div>
+                
+                <!-- Add Button for Sample Images -->
+                <button class="samples-button" id="openSamples">Click here for outfit samples</button>
             </div>
         </div>
     </section>
@@ -250,6 +253,16 @@
         </div>
     </section>
 
+    <!-- Add Modal for Sample Images at the end of the body, before closing body tag -->
+    <div id="samplesModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="modal-image-container">
+                <img src="./images/Sample_guests.png" alt="Outfit Samples">
+            </div>
+        </div>
+    </div>
+
     <!-- <footer class="wow animate__animated animate__fadeIn"> -->
     <footer>
         <div class="footer-decoration"></div>
@@ -264,14 +277,14 @@
         // Sticky Navigation and Burger Menu
         document.addEventListener('DOMContentLoaded', function() {
             const stickyNav = document.querySelector('.sticky-nav');
-            const welcomeSection = document.getElementById('details');
+            const detailsSection = document.getElementById('details');
             const burgerMenu = document.querySelector('.burger-menu');
             const navPopup = document.querySelector('.nav-popup');
             const navLinks = document.querySelectorAll('.nav-popup a');
             
             // Show/hide sticky nav based on scroll position
             window.addEventListener('scroll', function() {
-                if (window.scrollY > welcomeSection.offsetTop) {
+                if (window.scrollY > detailsSection.offsetTop) {
                     stickyNav.classList.add('visible');
                 } else {
                     stickyNav.classList.remove('visible');
@@ -406,6 +419,44 @@
             
             // Start auto-scroll when page loads
             startAutoScroll();
+        });
+
+        // Modal for Attire Samples
+        document.addEventListener('DOMContentLoaded', function() {
+            // ...existing gallery and other code...
+            
+            // Sample Images Modal
+            const samplesModal = document.getElementById('samplesModal');
+            const openSamplesBtn = document.getElementById('openSamples');
+            const closeModalBtn = document.querySelector('.close-modal');
+            
+            // Open modal when button is clicked
+            openSamplesBtn.addEventListener('click', function() {
+                samplesModal.classList.add('active');
+                document.body.style.overflow = 'hidden'; // Prevent scrolling when modal is open
+            });
+            
+            // Close modal when X is clicked
+            closeModalBtn.addEventListener('click', function() {
+                samplesModal.classList.remove('active');
+                document.body.style.overflow = ''; // Restore scrolling
+            });
+            
+            // Close modal when clicking outside of modal content
+            window.addEventListener('click', function(event) {
+                if (event.target === samplesModal) {
+                    samplesModal.classList.remove('active');
+                    document.body.style.overflow = '';
+                }
+            });
+            
+            // Close modal with Escape key
+            document.addEventListener('keydown', function(event) {
+                if (event.key === 'Escape' && samplesModal.classList.contains('active')) {
+                    samplesModal.classList.remove('active');
+                    document.body.style.overflow = '';
+                }
+            });
         });
     </script>
 </body>
