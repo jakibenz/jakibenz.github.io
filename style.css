@@ -266,8 +266,8 @@ header nav {
 /* Featured Image */
 .featured-image {
     position: relative;
-    width: 450px;
-    height: 280px;
+    /* width: 450px;
+    height: 280px; */
     /* border-radius: var(--border-radius-circle); */
     overflow: hidden;
     margin-bottom: 1rem;
@@ -924,6 +924,7 @@ footer p {
     .featured-image {
         width: 300px;
         height: 200px;
+        margin-top: 10%;
     }
     
     /* Header Decoration */
@@ -1141,13 +1142,6 @@ footer p {
         font-size: 1.8rem;
     }
     
-    /* Featured Image */
-    .featured-image {
-        width: 200px;
-        height: 134px;
-        border-width: 4px;
-    }
-    
     /* Header Image */
     .header-decoration-image {
         max-height: 12vh;
@@ -1189,7 +1183,7 @@ footer p {
     .gallery-frame {
         max-width: 95%;
     }
-    
+
     .gallery-indicators {
         bottom: 5px;
     }
