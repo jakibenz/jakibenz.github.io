@@ -20,7 +20,7 @@
         <img src="./images/header2_hd_custom.png" alt="Header Decoration" class="header-decoration-image desktop-only">
         <img src="./images/header2.png" alt="Header Decoration" class="header-decoration-image mobile-only">
         <div class="featured-image wow animate__animated animate__fadeIn" data-wow-duration="1.5s">
-            <img src="./images/0S0A1167.jpg" alt="Kenji & Tricia">
+            <img src="./images/0S0A1167.png" alt="Kenji & Tricia">
         </div>
         <h1 class="wow animate__animated animate__fadeInDown">The Wedding of</h1>
         <h2 class="wow animate__animated animate__fadeInDown">Kenji & Tricia</h2>
@@ -183,7 +183,7 @@
             
             <div class="gallery-frame">
                 <div class="gallery-images">
-                    <img src="https://picsum.photos/600/400?random=1" alt="Photo 1" class="active">
+                    <img src="./images/kyoto.jpg" alt="Photo 1" class="active">
                     <img src="https://picsum.photos/600/400?random=2" alt="Photo 2">
                     <img src="https://picsum.photos/600/400?random=3" alt="Photo 3">
                     <img src="https://picsum.photos/600/400?random=4" alt="Photo 4">
@@ -209,7 +209,8 @@
         <button>Submit</button>
     </section>
 
-    <footer class="wow animate__animated animate__fadeIn">
+    <!-- <footer class="wow animate__animated animate__fadeIn"> -->
+    <footer>
         <div class="footer-decoration"></div>
         <p>Thank you for being part of our special day! &copy; 2025</p>
     </footer>
@@ -257,6 +258,8 @@
             const galleryImages = document.querySelectorAll('.gallery-images img');
             const indicators = document.querySelector('.gallery-indicators');
             let currentIndex = 0;
+            let autoScrollInterval;
+            const autoScrollDelay = 3000; // 5 seconds between slides
             
             // Create indicators
             galleryImages.forEach((img, index) => {
@@ -266,6 +269,7 @@
                 dot.addEventListener('click', () => {
                     currentIndex = index;
                     updateGallery();
+                    resetAutoScroll(); // Reset timer when user interacts
                 });
                 indicators.appendChild(dot);
             });
@@ -282,17 +286,53 @@
                 });
             }
             
+            // Auto-scroll function
+            function startAutoScroll() {
+                // Clear any existing interval
+                if (autoScrollInterval) {
+                    clearInterval(autoScrollInterval);
+                }
+                
+                // Set up new interval
+                autoScrollInterval = setInterval(() => {
+                    currentIndex = (currentIndex + 1) % galleryImages.length;
+                    updateGallery();
+                }, autoScrollDelay);
+            }
+            
+            // Reset auto-scroll timer
+            function resetAutoScroll() {
+                clearInterval(autoScrollInterval);
+                startAutoScroll();
+            }
+            
             // Previous button handler
             prevBtn.addEventListener('click', () => {
                 currentIndex = (currentIndex - 1 + galleryImages.length) % galleryImages.length;
                 updateGallery();
+                resetAutoScroll(); // Reset timer when user interacts
             });
             
             // Next button handler
             nextBtn.addEventListener('click', () => {
                 currentIndex = (currentIndex + 1) % galleryImages.length;
                 updateGallery();
+                resetAutoScroll(); // Reset timer when user interacts
             });
+            
+            // Pause auto-scroll when hovering over the gallery
+            const galleryContainer = document.querySelector('.gallery-container');
+            galleryContainer.addEventListener('mouseenter', () => {
+                clearInterval(autoScrollInterval);
+            });
+            
+            // Resume auto-scroll when mouse leaves the gallery
+            galleryContainer.addEventListener('mouseleave', () => {
+                startAutoScroll();
+            });
+            
+            // Start auto-scroll when page loads
+            startAutoScroll();
         });
     </script>
 </body>
