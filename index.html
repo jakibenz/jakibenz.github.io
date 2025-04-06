@@ -14,8 +14,27 @@
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- <div class="decorative-background"></div> -->
+    <!-- Add sticky navigation -->
+    <div class="sticky-nav">
+        <div class="site-title">Kenji & Tricia</div>
+        <div class="burger-menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div class="nav-popup">
+            <nav>
+                <a href="#welcome"><span class="material-icons">home</span> Our Story</a>
+                <a href="#details"><span class="material-icons">event</span> Details</a>
+                <a href="#attire"><span class="material-icons">checkroom</span> Attire</a>
+                <a href="#rsvp"><span class="material-icons">check_circle</span> RSVP</a>
+                <a href="#gallery"><span class="material-icons">photo</span> Gallery</a>
+                <a href="#venue"><span class="material-icons">place</span> Venue</a>
+            </nav>
+        </div>
+    </div>
     
+    <!-- Rest of the content -->
     <header>
         <img src="./images/header2_hd_custom.png" alt="Header Decoration" class="header-decoration-image desktop-only">
         <img src="./images/header2.png" alt="Header Decoration" class="header-decoration-image mobile-only">
@@ -201,7 +220,7 @@
         </div>
     </section>
 
-    <section id="venue" class="venue wow animate__animated animate__fadeIn">
+    <section id="venue" class="venue wow animate__animated animate__fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
         <h2>Venue</h2>
         <p>Join us at these beautiful locations for our special day</p>
         
@@ -242,6 +261,38 @@
     <script>
         new WOW().init();
 
+        // Sticky Navigation and Burger Menu
+        document.addEventListener('DOMContentLoaded', function() {
+            const stickyNav = document.querySelector('.sticky-nav');
+            const welcomeSection = document.getElementById('details');
+            const burgerMenu = document.querySelector('.burger-menu');
+            const navPopup = document.querySelector('.nav-popup');
+            const navLinks = document.querySelectorAll('.nav-popup a');
+            
+            // Show/hide sticky nav based on scroll position
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > welcomeSection.offsetTop) {
+                    stickyNav.classList.add('visible');
+                } else {
+                    stickyNav.classList.remove('visible');
+                }
+            });
+            
+            // Toggle menu when burger is clicked
+            burgerMenu.addEventListener('click', function() {
+                burgerMenu.classList.toggle('active');
+                navPopup.classList.toggle('active');
+            });
+            
+            // Close menu when a link is clicked
+            navLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    burgerMenu.classList.remove('active');
+                    navPopup.classList.remove('active');
+                });
+            });
+        });
+
         // Countdown Timer Script
         const weddingDate = new Date("October 3, 2025 14:00:00").getTime();
         const timer = document.getElementById("timer");
@@ -281,7 +332,7 @@
             const indicators = document.querySelector('.gallery-indicators');
             let currentIndex = 0;
             let autoScrollInterval;
-            const autoScrollDelay = 3000; // 5 seconds between slides
+            const autoScrollDelay = 4000; // 5 seconds between slides
             
             // Create indicators
             galleryImages.forEach((img, index) => {
