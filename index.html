@@ -16,7 +16,7 @@
 <body>
     <!-- Add sticky navigation -->
     <div class="sticky-nav">
-        <div class="site-title">Kenji & Tricia</div>
+        <div class="site-title" id="scrollToTop">Kenji & Tricia</div>
         <div class="burger-menu">
             <span></span>
             <span></span>
@@ -191,7 +191,7 @@
     <section id="rsvp" class="rsvp wow animate__animated animate__fadeInDown" data-wow-duration="1s" data-wow-delay="0.2s">
         <h2>RSVP</h2>
         <p>We would love to know if you can make it!</p>
-        <p class="rsvp-deadline">Let us know by September 10</p>
+        <p class="rsvp-deadline">Let us know by <strong>September 10</strong></p>
         <button class="rsvp-button" onclick="window.location.href='https://forms.google.com'">RSVP Now</button>
     </section>
 
@@ -302,6 +302,16 @@
                 link.addEventListener('click', function() {
                     burgerMenu.classList.remove('active');
                     navPopup.classList.remove('active');
+                });
+            });
+
+            // Add scroll to top functionality to the site title
+            const scrollToTopBtn = document.getElementById('scrollToTop');
+            
+            scrollToTopBtn.addEventListener('click', function() {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
                 });
             });
         });
