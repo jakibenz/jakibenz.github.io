@@ -295,7 +295,7 @@ header nav {
     text-align: center;
 }
 
-.welcome, .rsvp, .guestbook {
+.welcome, .rsvp, .venue {
     background: var(--sage-green);
     color: var(--text-dark);
     padding: 2rem 1rem;
@@ -499,7 +499,7 @@ header nav {
     justify-content: center;
     flex-wrap: wrap;
     gap: 1.5rem;
-    color: var(--text-dark);
+    color: var (--text-dark);
 }
 
 .countdown-unit {
@@ -839,6 +839,91 @@ footer p {
     text-align: inherit;
 }
 
+/* Venue Section */
+.venue-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin: 2rem auto;
+    max-width: 1000px;
+}
+
+.venue-card {
+    background: var(--white);
+    padding: 2rem;
+    border-radius: var(--border-radius-large);
+    box-shadow: var(--shadow-lg);
+    width: 100%;
+    max-width: 400px;
+    transition: var(--transition-standard);
+}
+
+.venue-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-hover);
+}
+
+.venue-icon {
+    font-size: 2rem;
+    color: var(--blush-pink);
+    margin: 1rem 0;
+}
+
+.venue-icon .material-icons {
+    font-size: 3rem;
+}
+
+.venue-card h3 {
+    font-family: var(--font-lavonia);
+    font-size: 2.2rem;
+    color: var(--blush-pink);
+    margin-bottom: 0.5rem;
+}
+
+.venue-card h4 {
+    font-family: var(--font-safira);
+    font-size: 1.5rem;
+    color: var(--sage-green);
+    margin: 0.5rem 0;
+}
+
+.venue-time {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin: 0.5rem 0;
+}
+
+.venue-note {
+    font-style: italic;
+    font-size: 0.9rem;
+    margin: 0.5rem 0;
+}
+
+.venue-map-btn {
+    display: inline-flex;
+    align-items: center;
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    background: var(--sage-green);
+    color: var(--white);
+    border-radius: 25px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: var(--transition-standard);
+}
+
+.venue-map-btn:hover {
+    background: var(--blush-pink);
+    transform: translateY(-2px);
+    text-decoration: none;
+}
+
+.venue-map-btn .material-icons {
+    font-size: 1.2rem;
+    margin-right: 0.3rem;
+}
+
 /*=================================
   RESPONSIVE DESIGN
 ==================================*/
@@ -1038,6 +1123,24 @@ footer p {
     
     header h2::after {
         max-width: 400px;
+    }
+
+    /* Featured Image */
+    .featured-image {
+        width: 300px;
+        height: 25%;
+    }
+
+    .venue-card {
+        padding: 1.5rem;
+    }
+    
+    .venue-card h3 {
+        font-size: 1.8rem;
+    }
+    
+    .venue-card h4 {
+        font-size: 1.3rem;
     }
 }
 
