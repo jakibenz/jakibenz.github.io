@@ -1074,7 +1074,7 @@ footer p {
 }
 
 .venue-card h4 {
-    font-family: var(--font-safira);
+    font-family: var(--font-lora);
     font-size: 1.5rem;
     color: var(--sage-green);
     margin: 0.5rem 0;
