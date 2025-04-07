@@ -59,7 +59,7 @@
 ==================================*/
 html, body {
     height: 100%;
-    font-family: var(--font-serif)
+    font-family: var(--font-serif);
     color: var(--text-dark);
     background-color: var(--cream);
     margin: 0;
