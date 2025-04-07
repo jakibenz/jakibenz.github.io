@@ -52,8 +52,6 @@
     src: url('./fonts/EDLavonia-Regular.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
-
-    
 }
 
 /*=================================
@@ -699,7 +697,7 @@ header nav {
 /* Countdown Timer */
 .countdown {
     background: var(--sage-green);
-    padding: 2rem;
+    padding: 1rem;
     margin: 1rem auto 2rem;
     max-width: 90%;
     border-radius: 10px;
@@ -1002,8 +1000,8 @@ footer p {
 }
 
 .timeline-dot {
-    width: 60px;
-    height: 60px;
+    width: 46px;
+    height: 46px;
     border-radius: var(--border-radius-circle);
     background: var(--sage-green);
     display: flex;
@@ -1314,8 +1312,8 @@ footer p {
     
     .timeline-dot {
         left: 30px;
-        width: 50px;
-        height: 50px;
+        width: 40px;
+        height: 40px;
     }
     
     .timeline-content,
@@ -1379,8 +1377,8 @@ footer p {
     }
     
     .timeline-dot {
-        width: 50px;
-        height: 50px;
+        width: 40px;
+        height: 40px;
         left: 50%;
         transform: translateX(-50%);
     }
@@ -1422,8 +1420,8 @@ footer p {
     }
     
     .timeline-dot {
-        width: 50px;
-        height: 50px;
+        width: 40px;
+        height: 40px;
         left: 50%;
         transform: translateX(-50%);
     }
