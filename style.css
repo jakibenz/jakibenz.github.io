@@ -257,7 +257,7 @@ nav a:hover {
     right: 0;
     width: 0;
     height: 100vh;
-    background-color: rgba(158, 177, 169, 0.70);
+    background-color: rgba(158, 177, 169, 0.85);
     z-index: 999;
     overflow: hidden;
     transition: width 0.3s ease;
@@ -955,7 +955,7 @@ footer {
 
 footer p {
     font-family: var(--font-serif);
-    font-size: 0.8rem;
+    font-size: 1rem;
     margin: 0;
     position: relative;
     z-index: 1;
@@ -1540,6 +1540,10 @@ footer p {
     
     header h2::after {
         max-width: 280px;
+    }
+
+    footer p {
+        font-size: 0.8rem;
     }
 }
 
