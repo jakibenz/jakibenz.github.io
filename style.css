@@ -68,9 +68,8 @@ html, body {
 
 /* Typography */
 h1, h2, h3 {
-    font-family: var(--font-display);
+    font-family: var(--font-lavonia);
     font-weight: normal;
-    color: var(--heading-darker);
     text-align: center;
     margin: 0.5rem 0;
 }
@@ -80,7 +79,6 @@ h2 {
     display: inline-block;
     margin-bottom: 1rem;
     font-size: 3.5rem;
-    font-family: var(--font-lavonia);
     color: var(--white);
 }
 
@@ -423,16 +421,35 @@ header nav {
 
 /* Welcome Section */
 .welcome {
-    border-radius: 0 0 var(--border-radius-standard) var(--border-radius-standard);
     margin-top: 0;
     z-index: 0;
     padding: 3rem 1rem;
 }
 
 .welcome p {
-    font-size: 1.2rem;
     line-height: 1.8;
     margin-bottom: 1.5rem;
+}
+
+.our-story-heading {
+    font-family: var(--font-lavonia);
+    font-size: 2.8rem;
+    color: var(--white);
+    margin: 1rem 0 1.5rem;
+}
+
+.love-journey {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.love-journey p {
+    font-size: 1rem;
+    color: var(--text-dark);
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+    text-align: justify;
 }
 
 /* RSVP Section */
@@ -462,11 +479,11 @@ header nav {
     padding: 0.75rem 2rem;
     background: var(--white);
     color: var(--sage-green);
-    border: 2px solid var(--sage-green);
     border-radius: 25px;
     cursor: pointer;
     transition: var(--transition-standard);
     box-shadow: var(--shadow-md);
+    margin-bottom: 20px;
 }
 
 .rsvp-button:hover {
@@ -750,7 +767,6 @@ header nav {
     font-family: var(--font-display);
     font-size: 3rem;
     font-weight: bold;
-    color: var (--sage-green);
 }
 
 .unit-label {
