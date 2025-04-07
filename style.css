@@ -32,9 +32,9 @@
     
     /* Font families */
     --font-serif: "Libre Baskerville", serif;
-    --font-display: 'Playfair Display', serif;
     --font-safira: 'Safira March', serif;
     --font-lavonia: 'EDLavonia', regular;
+    --font-lora: "Lora", serif;
 }
 
 /*=================================
@@ -453,7 +453,7 @@ header nav {
 }
 
 /* RSVP Section */
-.rsvp, .guestbook {
+.rsvp{
     border-radius: 0;
 }
 
@@ -491,44 +491,6 @@ header nav {
     transform: translateY(-3px);
     box-shadow: var(--shadow-hover);
 }
-
-/* Guestbook Section */
-.guestbook textarea {
-    width: 80%;
-    max-width: 500px;
-    height: 120px;
-    margin: 1rem 0;
-    border: 2px solid var(--sage-green);
-    border-radius: var(--border-radius-standard);
-    padding: 0.75rem;
-    font-family: var(--font-serif);
-    box-shadow: var(--shadow-sm);
-    background-color: var(--cream);
-    background-image: url('https://www.transparenttextures.com/patterns/white-diamond.png');
-    background-repeat: repeat;
-    background-size: auto;
-}
-
-.guestbook button {
-    font-size: 1.1rem;
-    padding: 0.75rem 2rem;
-    background: var(--white);
-    color: var(--sage-green);
-    border: 2px solid var(--white);
-    border-radius: 25px;
-    cursor: pointer;
-    font-family: var(--font-serif);
-    box-shadow: var(--shadow-md);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.guestbook button:hover {
-    transform: translateY(-3px);
-    box-shadow: var(--shadow-hover);
-    background: var(--sage-green);
-    color: var(--white);
-}
-
 /* Attire Section */
 .attire {
     position: relative;
@@ -760,7 +722,7 @@ header nav {
 }
 
 .countdown-unit span:first-child {
-    font-family: var(--font-display);
+    font-family: var(--font-serif);
     font-size: 3rem;
     font-weight: bold;
 }
@@ -1270,11 +1232,6 @@ footer p {
     .color-samples {
         justify-content: center;
         padding-left: 1rem;
-    }
-    
-    /* Forms */
-    .guestbook textarea {
-        width: 90%;
     }
     
     /* Buttons */
