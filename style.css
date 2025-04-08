@@ -1168,7 +1168,7 @@ footer p {
     nav {
         display: flex;
         flex-direction: column;
-        align-items: left;
+        align-items: center;
     }
 
     nav a {
@@ -1433,7 +1433,6 @@ footer p {
     }
     .love-journey p {
         font-size: 1rem;
-        text-align: left;
     }
     
     /* Countdown */
