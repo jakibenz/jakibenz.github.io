@@ -1033,83 +1033,175 @@ footer p {
     justify-content: center;
     flex-wrap: wrap;
     gap: 2rem;
-    margin: 2rem auto;
-    max-width: 1000px;
+    margin: 3rem auto;
+    max-width: 1200px;
+    position: relative;
 }
 
-.venue-card {
-    background: var(--white);
+.venue-container::after {
+    content: '';
+    position: absolute;
+    top: 10%;
+    bottom: 10%;
+    left: 50%;
+    width: 1px;
+    background: linear-gradient(to bottom, transparent, var(--white) 20%, var(--white) 80%, transparent);
+    display: none;
+}
+
+.venue-item {
+    flex: 1;
+    min-width: 300px;
     padding: 2rem;
-    border-radius: var(--border-radius-large);
-    box-shadow: var(--shadow-lg);
-    width: 100%;
-    max-width: 400px;
+    text-align: center;
+    position: relative;
     transition: var(--transition-standard);
 }
 
-.venue-card:hover {
-    transform: translateY(-5px);
-    box-shadow: var(--shadow-hover);
+.venue-item h3 {
+    font-family: var(--font-lavonia);
+    font-size: 2.5rem;
+    color: var(--white);
+    margin-bottom: 1.5rem;
+    position: relative;
+    display: inline-block;
+}
+
+.venue-item h3::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: var(--white);
+    opacity: 0.5;
+    width: 40%;
+    margin: 0 auto;
 }
 
 .venue-icon {
-    font-size: 2rem;
-    color: var(--blush-pink);
-    margin: 1rem 0;
+    margin: 1.5rem 0;
 }
 
 .venue-icon .material-icons {
-    font-size: 3rem;
+    font-size: 3.5rem;
+    color: var(--text-dark);
+    opacity: 0.9;
+    transition: var(--transition-standard);
 }
 
-.venue-card h3 {
-    font-family: var(--font-lavonia);
-    font-size: 2.2rem;
-    color: var(--blush-pink);
-    margin-bottom: 0.5rem;
+.venue-item h4 {
+    font-family: var(--font-safira);
+    font-size: 1.7rem;
+    color: var(--cream);
+    margin: 1rem 0;
+    font-weight: normal;
 }
 
-.venue-card h4 {
-    font-family: var(--font-lora);
-    font-size: 1.5rem;
-    color: var(--sage-green);
+.venue-item p {
     margin: 0.5rem 0;
+    font-size: 1.1rem;
 }
 
 .venue-time {
-    font-size: 1.2rem;
     font-weight: bold;
-    margin: 0.5rem 0;
+    margin: 1rem 0 !important;
+    font-family: var(--font-serif);
+    font-size: 1.3rem !important;
+    color: var(--text-dark) !important;
 }
 
 .venue-note {
     font-style: italic;
-    font-size: 0.9rem;
     margin: 0.5rem 0;
+    font-size: 0.95rem !important;
+    opacity: 0.9;
 }
 
 .venue-map-btn {
     display: inline-flex;
     align-items: center;
-    margin-top: 1rem;
-    padding: 0.5rem 1rem;
-    background: var(--sage-green);
+    margin-top: 1.5rem;
+    padding: 0.6rem 1.5rem;
+    background: rgba(255, 255, 255, 0.2);
     color: var(--white);
-    border-radius: 25px;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 30px;
     text-decoration: none;
-    font-size: 0.9rem;
+    font-size: 1rem;
     transition: var(--transition-standard);
 }
 
 .venue-map-btn:hover {
-    background: var(--blush-pink);
-    transform: translateY(-2px);
+    background: var(--cream);
+    color: var(--sage-green);
+    transform: translateY(-3px);
     text-decoration: none;
+    box-shadow: var(--shadow-hover);
 }
 
 .venue-map-btn .material-icons {
     font-size: 1.2rem;
-    margin-right: 0.3rem;
+    margin-right: 0.5rem;
+}
+
+/* Media queries for venue section */
+@media (min-width: 992px) {
+    .venue-container::after {
+        display: block;
+    }
+    
+    .venue-item {
+        padding: 2rem 4rem;
+    }
+}
+
+@media (max-width: 767px) {
+    .venue-item {
+        min-width: 100%;
+        padding: 2rem 1rem;
+    }
+    
+    .venue-item:first-child {
+        margin-bottom: 4rem;
+    }
+    
+    .venue-item:first-child::after {
+        content: '';
+        position: absolute;
+        bottom: -2rem;
+        left: 25%;
+        right: 25%;
+        height: 1px;
+        background: linear-gradient(to right, transparent, var(--white) 20%, var(--white) 80%, transparent);
+    }
+    
+    .venue-item h3 {
+        font-size: 2.2rem;
+    }
+    
+    .venue-item h4 {
+        font-size: 1.5rem;
+    }
+    
+    .venue-time {
+        font-size: 1.2rem !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .venue-item h3 {
+        font-size: 1.8rem;
+    }
+    
+    .venue-item h4 {
+        font-size: 1.3rem;
+    }
+    
+    .venue-icon .material-icons {
+        font-size: 3rem;
+    }
 }
 
 /*=================================
