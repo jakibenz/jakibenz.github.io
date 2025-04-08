@@ -452,14 +452,6 @@ header nav {
 }
 
 /* RSVP Section */
-.rsvp{
-    border-radius: 0;
-}
-
-.rsvp p, .rsvp-deadline {
-    color: var(--text-dark);
-}
-
 .rsvp p {
     margin-bottom: 1.5rem;
 }
@@ -482,6 +474,10 @@ header nav {
     transition: var(--transition-standard);
     box-shadow: var(--shadow-md);
     margin-bottom: 20px;
+}
+
+.contact-info {
+    font-size: 0.9rem;
 }
 
 .rsvp-button:hover {
@@ -1172,7 +1168,7 @@ footer p {
     nav {
         display: flex;
         flex-direction: column;
-        align-items: center;
+        align-items: left;
     }
 
     nav a {
@@ -1437,6 +1433,7 @@ footer p {
     }
     .love-journey p {
         font-size: 1rem;
+        text-align: left;
     }
     
     /* Countdown */

@@ -28,9 +28,9 @@
                 <a href="#welcome"><span class="material-icons">home</span> Our Story</a>
                 <a href="#details"><span class="material-icons">event</span> Details</a>
                 <a href="#attire"><span class="material-icons">checkroom</span> Attire</a>
-                <a href="#rsvp"><span class="material-icons">check_circle</span> RSVP</a>
-                <a href="#gallery"><span class="material-icons">photo</span> Gallery</a>
                 <a href="#venue"><span class="material-icons">place</span> Venue</a>
+                <a href="#gallery"><span class="material-icons">photo</span> Gallery</a>
+                <a href="#rsvp"><span class="material-icons">check_circle</span> RSVP</a>
             </nav>
         </div>
     </div>
@@ -49,9 +49,9 @@
             <a href="#welcome"><span class="material-icons">home</span> Our Story</a>
             <a href="#details"><span class="material-icons">event</span> Details</a>
             <a href="#attire"><span class="material-icons">checkroom</span> Attire</a>
-            <a href="#rsvp"><span class="material-icons">check_circle</span> RSVP</a>
-            <a href="#gallery"><span class="material-icons">photo</span> Gallery</a>
             <a href="#venue"><span class="material-icons">place</span> Venue</a>
+            <a href="#gallery"><span class="material-icons">photo</span> Gallery</a>
+            <a href="#rsvp"><span class="material-icons">check_circle</span> RSVP</a>
         </nav>
     </header>
 
@@ -316,6 +316,19 @@
                     burgerMenu.classList.remove('active');
                     navPopup.classList.remove('active');
                 });
+            });
+
+            // Close navigation popup when clicking outside
+            document.addEventListener('click', function(event) {
+                // Check if popup is active and click is outside both popup and burger menu
+                if (navPopup.classList.contains('active') && 
+                    !navPopup.contains(event.target) && 
+                    !burgerMenu.contains(event.target)) {
+                    
+                    // Close the popup
+                    navPopup.classList.remove('active');
+                    burgerMenu.classList.remove('active');
+                }
             });
 
             // Add scroll to top functionality to the site title
