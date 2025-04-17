@@ -526,19 +526,21 @@ header nav {
 }
 
 .rsvp-button {
+    display: inline-block; /* Ensure transform works correctly */
+    margin-bottom: 30px; /* Increase margin to prevent overlap */
+    transition: var(--transition-standard); /* Ensure transition is applied */
     font-size: 1.2rem;
     padding: 0.75rem 2rem;
     background: var(--white);
     color: var(--sage-green);
     border-radius: 25px;
     box-shadow: var(--shadow-md);
-    margin-bottom: 20px;
 }
 
 .rsvp-button:hover {
+    transform: translateY(-3px); /* Ensure transform is explicitly set */
     background: var(--sage-green);
     color: var(--white);
-    transform: translateY(-3px);
     box-shadow: var(--shadow-hover);
 }
 
@@ -1511,7 +1513,7 @@ footer p {
     }
     
     .timeline-content h4 {
-        font-size: 0.9rem;
+        font-size: 1rem;
     }
     
     header h2::after {
