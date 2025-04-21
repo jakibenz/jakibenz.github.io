@@ -758,6 +758,44 @@ header nav {
     margin-right: 0.5rem;
 }
 
+/* Update venue image styling */
+.venue-image {
+    margin: 1.5rem auto;
+    max-width: 280px;
+    width: 100%;
+    height: 180px; /* Set fixed height for consistent sizing */
+    overflow: hidden;
+    box-shadow: none; /* Remove box shadow */
+    position: relative;
+    margin-top: 8px;
+}
+
+/* Remove top margin for pavilion drawing only */
+.venue-item:nth-child(2) .venue-image {
+    margin-top: 0;
+}
+
+.church-drawing, .pavilion-drawing {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: contain; /* Make image fill the container */
+    transition: none; /* Remove transitions */
+}
+
+/* Responsive adjustments for the venue image */
+@media (max-width: 767px) {
+    .venue-image {
+        max-width: 240px;
+    }
+}
+
+@media (max-width: 480px) {
+    .venue-image {
+        max-width: 200px;
+    }
+}
+
 /*=================================
   TIMELINE SECTION
 ==================================*/
