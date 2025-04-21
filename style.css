@@ -1716,6 +1716,7 @@ footer p {
     }
     .invitation-cards-wrapper{
         height: 470px; /* Adjust based on your invitation dimensions */
+        margin-bottom: 0.5rem;
     }
 }
 
@@ -1725,12 +1726,6 @@ footer p {
         max-height: 10vh;
         transform: none;
     }
-
-    .invitation-cards-wrapper{
-        height: 400px;
-        margin-bottom: 1rem;
-    }
-    
 }
 
 /* Very small devices */
@@ -1755,5 +1750,10 @@ footer p {
     
     header h2::after {
         max-width: 220px;
+    }
+    
+    .invitation-cards-wrapper{
+        height: 380px;
+        margin-bottom: 0.5rem;
     }
 }
