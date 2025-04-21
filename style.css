@@ -539,8 +539,8 @@ header nav {
 
 .rsvp-button:hover {
     transform: translateY(-3px); /* Ensure transform is explicitly set */
-    background: var(--sage-green);
-    color: var(--white);
+    background: var(--cream);
+    color: var(--blush-pink);
     box-shadow: var(--shadow-hover);
 }
 
