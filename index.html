@@ -267,6 +267,51 @@
         </div>
     </section>
 
+    <div class="divider">
+        <div class="divider-icon"><span>✦</span></div>
+    </div>
+
+    <!-- Moved Invitation Section to end of page -->
+    <section id="invitation" class="invitation wow animate__animated animate__fadeIn" data-wow-duration="1.5s">
+        <h2>Our Invitation</h2>
+        <p>Swipe through our wedding invitation</p>
+        
+        <div class="invitation-container">
+            <div class="invitation-cards-wrapper">
+                <div class="invitation-cards">
+                    <div class="invitation-card active" data-index="0">
+                        <img src="./images/Invitation_pg1.png" alt="Invitation Page 1">
+                    </div>
+                    <div class="invitation-card" data-index="1">
+                        <img src="./images/Invitation_pg2.png" alt="Invitation Page 2">
+                    </div>
+                    <div class="invitation-card" data-index="2">
+                        <img src="./images/Invitation_pg3.png" alt="Invitation Page 3">
+                    </div>
+                    <div class="invitation-card" data-index="3">
+                        <img src="./images/Invitation_pg4.png" alt="Invitation Page 4">
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Navigation moved to bottom with more space -->
+            <div class="invitation-navigation">
+                <button class="invitation-nav prev-invitation" aria-label="Previous invitation page">
+                    <span class="material-icons">chevron_left</span>
+                </button>
+                <div class="invitation-indicators">
+                    <span class="invitation-indicator active" data-index="0"></span>
+                    <span class="invitation-indicator" data-index="1"></span>
+                    <span class="invitation-indicator" data-index="2"></span>
+                    <span class="invitation-indicator" data-index="3"></span>
+                </div>
+                <button class="invitation-nav next-invitation" aria-label="Next invitation page">
+                    <span class="material-icons">chevron_right</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
     <div id="samplesModal" class="modal">
         <div class="modal-content">
             <span class="close-modal">&times;</span>
@@ -340,6 +385,123 @@
                     behavior: 'smooth'
                 });
             });
+
+            // Invitation Card Navigation
+            const invitationCards = document.querySelectorAll('.invitation-card');
+            const prevInvitation = document.querySelector('.prev-invitation');
+            const nextInvitation = document.querySelector('.next-invitation');
+            const invitationIndicators = document.querySelectorAll('.invitation-indicator');
+            const invitationCardsWrapper = document.querySelector('.invitation-cards-wrapper');
+            
+            let currentInvitationIndex = 0;
+            const maxInvitationIndex = invitationCards.length - 1;
+            
+            // Touch swipe variables
+            let touchStartX = 0;
+            let touchEndX = 0;
+            let touchStartY = 0;
+            let touchEndY = 0;
+            const minSwipeDistance = 50; // Minimum distance required for a swipe
+            
+            // Initialize with first card active and set adjacent cards
+            function updateInvitationCards() {
+                invitationCards.forEach((card, index) => {
+                    card.classList.remove('active', 'prev', 'next');
+                    
+                    if (index === currentInvitationIndex) {
+                        card.classList.add('active');
+                    } else if (index === getPrevInvitationIndex()) {
+                        card.classList.add('prev');
+                    } else if (index === getNextInvitationIndex()) {
+                        card.classList.add('next');
+                    }
+                });
+                
+                // Update indicators
+                invitationIndicators.forEach((indicator, index) => {
+                    indicator.classList.toggle('active', index === currentInvitationIndex);
+                });
+            }
+            
+            function getPrevInvitationIndex() {
+                return (currentInvitationIndex - 1 + invitationCards.length) % invitationCards.length;
+            }
+            
+            function getNextInvitationIndex() {
+                return (currentInvitationIndex + 1) % invitationCards.length;
+            }
+            
+            // Navigate to specific invitation slide
+            function goToInvitationSlide(index) {
+                currentInvitationIndex = index;
+                updateInvitationCards();
+            }
+            
+            // Previous button handler
+            prevInvitation.addEventListener('click', () => {
+                currentInvitationIndex = getPrevInvitationIndex();
+                updateInvitationCards();
+            });
+            
+            // Next button handler
+            nextInvitation.addEventListener('click', () => {
+                currentInvitationIndex = getNextInvitationIndex();
+                updateInvitationCards();
+            });
+            
+            // Indicator click handlers
+            invitationIndicators.forEach((indicator, index) => {
+                indicator.addEventListener('click', () => {
+                    goToInvitationSlide(index);
+                });
+            });
+            
+            // Handle keyboard navigation for invitation when focused
+            const invitationSection = document.getElementById('invitation');
+            invitationSection.addEventListener('keydown', (e) => {
+                if (e.key === 'ArrowLeft') {
+                    currentInvitationIndex = getPrevInvitationIndex();
+                    updateInvitationCards();
+                } else if (e.key === 'ArrowRight') {
+                    currentInvitationIndex = getNextInvitationIndex();
+                    updateInvitationCards();
+                }
+            });
+            
+            // Add touch swipe functionality
+            invitationCardsWrapper.addEventListener('touchstart', function(e) {
+                touchStartX = e.changedTouches[0].screenX;
+                touchStartY = e.changedTouches[0].screenY;
+            }, { passive: true });
+            
+            invitationCardsWrapper.addEventListener('touchend', function(e) {
+                touchEndX = e.changedTouches[0].screenX;
+                touchEndY = e.changedTouches[0].screenY;
+                handleSwipe();
+            }, { passive: true });
+            
+            function handleSwipe() {
+                const deltaX = touchEndX - touchStartX;
+                const deltaY = touchEndY - touchStartY;
+                
+                // Check if horizontal swipe is more significant than vertical
+                if (Math.abs(deltaX) > Math.abs(deltaY)) {
+                    // Ensure the swipe was long enough
+                    if (Math.abs(deltaX) > minSwipeDistance) {
+                        if (deltaX > 0) {
+                            // Swiped right, go to previous card
+                            currentInvitationIndex = getPrevInvitationIndex();
+                        } else {
+                            // Swiped left, go to next card
+                            currentInvitationIndex = getNextInvitationIndex();
+                        }
+                        updateInvitationCards();
+                    }
+                }
+            }
+            
+            // Initialize invitation card classes
+            updateInvitationCards();
         });
 
         // Countdown Timer Script
