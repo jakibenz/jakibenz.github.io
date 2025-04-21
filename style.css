@@ -1644,6 +1644,8 @@ footer p {
     .gallery-nav {
         width: 35px;
         height: 35px;
+        background-color: rgba(255, 255, 255, 0);
+        color: var(--white)
     }
     
     .gallery-nav .material-icons {
@@ -1725,7 +1727,7 @@ footer p {
     }
 
     .invitation-cards-wrapper{
-        height: 400px; Adjust based on your invitation dimensions
+        height: 400px;
         margin-bottom: 1rem;
     }
     
