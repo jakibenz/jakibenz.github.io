@@ -277,15 +277,27 @@
                 <div class="invitation-cards">
                     <div class="invitation-card active" data-index="0">
                         <img src="./images/Invitation_pg1.png" alt="Invitation Page 1">
+                        <button class="fullscreen-button" data-index="0" aria-label="View full screen">
+                            <span class="material-icons">fullscreen</span>
+                        </button>
                     </div>
                     <div class="invitation-card" data-index="1">
                         <img src="./images/Invitation_pg2.png" alt="Invitation Page 2">
+                        <button class="fullscreen-button" data-index="1" aria-label="View full screen">
+                            <span class="material-icons">fullscreen</span>
+                        </button>
                     </div>
                     <div class="invitation-card" data-index="2">
                         <img src="./images/Invitation_pg3.png" alt="Invitation Page 3">
+                        <button class="fullscreen-button" data-index="2" aria-label="View full screen">
+                            <span class="material-icons">fullscreen</span>
+                        </button>
                     </div>
                     <div class="invitation-card" data-index="3">
                         <img src="./images/Invitation_pg4.png" alt="Invitation Page 4">
+                        <button class="fullscreen-button" data-index="3" aria-label="View full screen">
+                            <span class="material-icons">fullscreen</span>
+                        </button>
                     </div>
                 </div>
             </div>
@@ -325,6 +337,14 @@
             <div class="modal-image-container">
                 <img src="./images/Sample_guests.png" alt="Outfit Samples">
             </div>
+        </div>
+    </div>
+
+    <!-- Add invitation fullscreen modal before the closing body tag -->
+    <div id="invitationFullscreenModal" class="invitation-fullscreen-modal">
+        <div class="invitation-fullscreen-content">
+            <span class="close-fullscreen">&times;</span>
+            <img id="fullscreenInvitationImage" src="" alt="Full-screen Invitation">
         </div>
     </div>
 
@@ -662,6 +682,47 @@
                     document.body.style.overflow = '';
                 }
             });
+        });
+
+        // Invitation Fullscreen Functionality
+        const fullscreenButtons = document.querySelectorAll('.fullscreen-button');
+        const fullscreenModal = document.getElementById('invitationFullscreenModal');
+        const fullscreenImage = document.getElementById('fullscreenInvitationImage');
+        const closeFullscreen = document.querySelector('.close-fullscreen');
+        const invitationImages = document.querySelectorAll('.invitation-card img');
+        
+        // Open fullscreen modal when fullscreen button is clicked
+        fullscreenButtons.forEach(button => {
+            button.addEventListener('click', function(e) {
+                e.stopPropagation(); // Prevent the swipe/click from triggering
+                const index = this.getAttribute('data-index');
+                const imageSource = invitationImages[index].getAttribute('src');
+                fullscreenImage.setAttribute('src', imageSource);
+                fullscreenModal.classList.add('active');
+                document.body.style.overflow = 'hidden'; // Prevent scrolling
+            });
+        });
+        
+        // Close fullscreen modal when X is clicked
+        closeFullscreen.addEventListener('click', function() {
+            fullscreenModal.classList.remove('active');
+            document.body.style.overflow = ''; // Restore scrolling
+        });
+        
+        // Close fullscreen modal when clicking outside of the image
+        fullscreenModal.addEventListener('click', function(event) {
+            if (event.target === fullscreenModal) {
+                fullscreenModal.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        });
+        
+        // Close fullscreen modal with Escape key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape' && fullscreenModal.classList.contains('active')) {
+                fullscreenModal.classList.remove('active');
+                document.body.style.overflow = '';
+            }
         });
     </script>
 </body>
