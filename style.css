@@ -139,10 +139,6 @@ button, .btn {
     transition: var(--transition-standard);
 }
 
-button:hover, .btn:hover {
-    background-color: var(--blue-link-hover);
-}
-
 /* Quotes */
 blockquote {
     font-style: italic;
@@ -961,7 +957,7 @@ header nav {
     z-index: 2;
 }
 
-.gallery-nav:hover {
+.gallery-nav-hover:hover {
     background: var(--sage-green);
     color: var(--white);
     transform: scale(1.1);
@@ -1241,7 +1237,7 @@ header nav {
     }
 }
 
-.invitation-nav:hover {
+.invitation-nav-hover:hover {
     background: var(--sage-green);
     color: var(--white);
     transform: scale(1.1);

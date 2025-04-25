@@ -58,9 +58,9 @@
     <section id="welcome" class="welcome">
         <h2 class="our-story-heading">Our Story</h2>
         <div class="love-journey">
-            <p class="wow animate__animated animate__fadeInLeft" data-wow-duration="1.5s" data-wow-delay="0.2s">Our journey began in 2017 when we met at our workplace. What started as casual lunch breaks soon blossomed into something special, with laughter becoming our signature connection. Our shared love for adventure led us to Japan, which unknowingly became a significant backdrop to our love story.</p>
+            <p class="wow animate__animated animate__fadeInLeft" data-wow-duration="1.5s" data-wow-delay="0.2s">Kenji and Tricia's journey began in 2017 when they met at their workplace. What started as casual lunch breaks soon blossomed into something special, with laughter becoming their signature connection. Their shared love for adventure led them to Japan, which unknowingly became a significant backdrop to their love story.</p>
 
-            <p class="wow animate__animated animate__fadeInRight" data-wow-duration="1.5s" data-wow-delay="0.4s">When Tricia accepted a job in Singapore, we navigated a year of long-distance relationship before Kenji joined her abroad. Together, we weathered the pandemic, confirming what we already knew—we were meant to face life's challenges side by side. After six beautiful years, our story came full circle when Kenji proposed in Kyoto, Japan—the country where our travels first began.</p>
+            <p class="wow animate__animated animate__fadeInRight" data-wow-duration="1.5s" data-wow-delay="0.4s">When Tricia accepted a job in Singapore, they navigated a year of long-distance relationship before Kenji joined her abroad. Together, they weathered the pandemic, confirming what they already knew—they were meant to face life's challenges side by side. After six beautiful years, their story came full circle when Kenji proposed in Kyoto, Japan—the country where their travels first began.</p>
             
             <blockquote class="wow animate__animated animate__fadeInUp" data-wow-duration="1.5s" data-wow-delay="0.5s">"The best love stories aren't the ones that never face challenges, but the ones where two people decide that what they have is worth crossing oceans for."</blockquote>
         </div>
@@ -238,7 +238,7 @@
         <h2>Through the Lens</h2>
         <p>Here's a glimpse into some of the beautiful memories we've created together.</p>
         <div class="gallery-container">
-            <button class="gallery-nav prev-btn" aria-label="Previous photo">
+            <button class="gallery-nav gallery-nav-hover prev-btn" aria-label="Previous photo">
                 <span class="material-icons">chevron_left</span>
             </button>
             
@@ -257,7 +257,7 @@
                 </div>
             </div>
             
-            <button class="gallery-nav next-btn" aria-label="Next photo">
+            <button class="gallery-nav gallery-nav-hover next-btn" aria-label="Next photo">
                 <span class="material-icons">chevron_right</span>
             </button>
         </div>
@@ -303,7 +303,7 @@
             </div>
             
             <div class="invitation-navigation">
-                <button class="invitation-nav prev-invitation" aria-label="Previous invitation page">
+                <button class="invitation-nav invitation-nav-hover prev-invitation" aria-label="Previous invitation page">
                     <span class="material-icons">chevron_left</span>
                 </button>
                 <div class="invitation-indicators">
@@ -312,7 +312,7 @@
                     <span class="invitation-indicator" data-index="2"></span>
                     <span class="invitation-indicator" data-index="3"></span>
                 </div>
-                <button class="invitation-nav next-invitation" aria-label="Next invitation page">
+                <button class="invitation-nav invitation-nav-hover next-invitation" aria-label="Next invitation page">
                     <span class="material-icons">chevron_right</span>
                 </button>
             </div>
@@ -413,6 +413,28 @@
                 });
             });
 
+            
+            // Previous button handler
+            function handleGalleryNavClick(button, direction) {
+                currentIndex = (currentIndex + direction + galleryImages.length) % galleryImages.length;
+                updateGallery();
+                resetAutoScroll(); // Reset timer when user interacts
+                button.classList.add('gallery-nav-hover');
+                setTimeout(() => {
+                    button.classList.remove('gallery-nav-hover');
+                }, 500);
+            }
+            
+            // Hover effect
+            function addHoverEffect(button, hoverClass) {
+                button.addEventListener('mouseenter', () => {
+                    button.classList.add('invitation-nav-hover');
+                });
+                button.addEventListener('mouseleave', () => {
+                    button.classList.remove('invitation-nav-hover');
+                });
+            }
+
             // Invitation Card Navigation
             const invitationCards = document.querySelectorAll('.invitation-card');
             const prevInvitation = document.querySelector('.prev-invitation');
@@ -465,16 +487,27 @@
             }
             
             // Previous button handler
+            function handleInvitationNavClick(button, direction) {
+                currentInvitationIndex = (currentInvitationIndex + direction + invitationCards.length) % invitationCards.length;
+                updateInvitationCards();
+                
+                button.classList.add('invitation-nav-hover');
+                setTimeout(() => {
+                    button.classList.remove('invitation-nav-hover');
+                }, 500);
+            }
+
             prevInvitation.addEventListener('click', () => {
-                currentInvitationIndex = getPrevInvitationIndex();
-                updateInvitationCards();
+                handleInvitationNavClick(prevInvitation, -1);
             });
-            
-            // Next button handler
+
             nextInvitation.addEventListener('click', () => {
-                currentInvitationIndex = getNextInvitationIndex();
-                updateInvitationCards();
+                handleInvitationNavClick(nextInvitation, 1);
             });
+
+            
+            addHoverEffect(prevInvitation);
+            addHoverEffect(nextInvitation);
             
             // Indicator click handlers
             invitationIndicators.forEach((indicator, index) => {
@@ -618,18 +651,36 @@
             }
             
             // Previous button handler
-            prevBtn.addEventListener('click', () => {
-                currentIndex = (currentIndex - 1 + galleryImages.length) % galleryImages.length;
+            function handleGalleryNavClick(button, direction) {
+                currentIndex = (currentIndex + direction + galleryImages.length) % galleryImages.length;
                 updateGallery();
                 resetAutoScroll(); // Reset timer when user interacts
-            });
+                button.classList.add('gallery-nav-hover');
+                setTimeout(() => {
+                    button.classList.remove('gallery-nav-hover');
+                }, 500);
+            }
             
-            // Next button handler
-            nextBtn.addEventListener('click', () => {
-                currentIndex = (currentIndex + 1) % galleryImages.length;
-                updateGallery();
-                resetAutoScroll(); // Reset timer when user interacts
+            // Hover effect
+            function addHoverEffect(button) {
+                button.addEventListener('mouseenter', () => {
+                    button.classList.add('gallery-nav-hover');
+                });
+                button.addEventListener('mouseleave', () => {
+                    button.classList.remove('gallery-nav-hover');
+                });
+            }
+
+            prevBtn.addEventListener('click', () => {
+                handleGalleryNavClick(prevBtn, -1);
             });
+
+            nextBtn.addEventListener('click', () => {
+                handleGalleryNavClick(nextBtn, 1);
+            });
+
+            addHoverEffect(prevBtn);
+            addHoverEffect(nextBtn);
             
             // Pause auto-scroll when hovering over the gallery
             const galleryContainer = document.querySelector('.gallery-container');
