@@ -403,10 +403,19 @@
                 }
             });
 
-            // Add scroll to top functionality to the site title
+            // Add scroll to top functionality to the site title with visual feedback
             const scrollToTopBtn = document.getElementById('scrollToTop');
             
             scrollToTopBtn.addEventListener('click', function() {
+                // Add visual feedback similar to gallery navigation
+                this.classList.add('site-title-active');
+                
+                // Remove the class after a delay (similar to handleGalleryNavClick)
+                setTimeout(() => {
+                    this.classList.remove('site-title-active');
+                }, 500);
+                
+                // Scroll to top with smooth behavior
                 window.scrollTo({
                     top: 0,
                     behavior: 'smooth'

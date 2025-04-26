@@ -82,7 +82,8 @@ a:focus-visible,
 .nav-popup a:focus-visible,
 .invitation-nav:focus-visible,
 .gallery-nav:focus-visible,
-.fullscreen-button:focus-visible {
+.fullscreen-button:focus-visible,
+.site-title:focus-visible {
     box-shadow: 0 0 0 2px var(--blush-pink);
     border-radius: inherit;
 }
@@ -102,7 +103,8 @@ a,
 .invitation-indicator,
 .close-modal,
 .close-fullscreen,
-.color-sample {
+.color-sample,
+.site-title {
     -webkit-tap-highlight-color: transparent;
     -webkit-touch-callout: none;
     -webkit-user-select: none;
@@ -280,7 +282,8 @@ nav a:hover {
     transition: var(--transition-standard);
 }
 
-.site-title:hover {
+/* New active class for site title click feedback */
+.site-title-active {
     color: var(--blush-pink);
     transform: translateY(-2px);
 }
