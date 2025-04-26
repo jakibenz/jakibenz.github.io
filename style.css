@@ -68,6 +68,47 @@ html, body {
     padding: 0;
 }
 
+/* Remove focus outline and tap highlight for touch devices */
+:focus {
+    outline: none;
+}
+
+/* Custom focus styles for keyboard navigation only */
+button:focus-visible,
+a:focus-visible,
+.venue-map-btn:focus-visible,
+.rsvp-button:focus-visible,
+.samples-button:focus-visible,
+.nav-popup a:focus-visible,
+.invitation-nav:focus-visible,
+.gallery-nav:focus-visible,
+.fullscreen-button:focus-visible {
+    box-shadow: 0 0 0 2px var(--blush-pink);
+    border-radius: inherit;
+}
+
+/* Remove blue tap highlight on touch devices */
+button,
+a,
+.venue-map-btn,
+.rsvp-button,
+.samples-button,
+.nav-popup a,
+.burger-menu,
+.invitation-nav,
+.gallery-nav,
+.fullscreen-button,
+.indicator,
+.invitation-indicator,
+.close-modal,
+.close-fullscreen,
+.color-sample {
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
 /* Typography */
 h1, h2, h3 {
     font-family: var(--font-lavonia);
@@ -855,7 +896,7 @@ header nav {
 .timeline-content {
     width: 45%;
     padding: 0.5rem;
-    background: white;
+    background: var(--white);
     border-radius: 16px;
     box-shadow: var(--shadow-md);
     text-align: left;
@@ -1829,7 +1870,7 @@ footer p {
     header h2::after {
         max-width: 280px;
     }
-
+    
     footer p {
         font-size: 0.8rem;
     }
