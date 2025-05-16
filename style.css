@@ -506,6 +506,15 @@ header nav {
     margin-top: 2.5rem;
 }
 
+/* Big day message styling */
+.big-day-message {
+    font-family: var(--font-safira);
+    font-size: 3rem;
+    color: var(--cream);
+    text-align: center;
+    margin: 0;
+}
+
 .countdown-wrapper {
     display: flex;
     justify-content: center;

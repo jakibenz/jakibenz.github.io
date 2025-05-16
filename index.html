@@ -574,35 +574,47 @@
         });
 
         // Countdown Timer Script
-        const weddingDate = new Date("October 3, 2025 14:00:00").getTime();
-        const timer = document.getElementById("timer");
+        const weddingDate = new Date("October 3 2025 14:00:00"); // Wedding day with ceremony time
+        const countdownWrapper = document.querySelector('.countdown-wrapper');
 
         function updateCountdown() {
-            const now = new Date().getTime();
+            const now = new Date(); // Current date and time
+            const countdownTitle = document.querySelector('.countdown-title');
+            
+            // Check if today is the wedding day (same year, month, and day)
+            const isWeddingDay = now.getFullYear() === weddingDate.getFullYear() && 
+                                 now.getMonth() === weddingDate.getMonth() && 
+                                 now.getDate() === weddingDate.getDate();
+            
+            if (isWeddingDay) {
+                // It's the wedding day!
+                countdownWrapper.innerHTML = "<p class='big-day-message'>Today, we say \"I do\"!</p>";
+                return;
+            }
+            
             const distance = weddingDate - now;
+            
+            if (distance > 0) {
+                // Countdown to the wedding day
+                countdownTitle.style.display = 'block'; // Show countdown title
+                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                const months = Math.floor(days / 30); // Approximate months
+                const remainingDays = days % 30;
+                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
 
-            const months = Math.floor(distance / (1000 * 60 * 60 * 24 * 30));
-            const days = Math.floor((distance % (1000 * 60 * 60 * 24 * 30)) / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-            // Update the individual spans by their IDs  
-            document.getElementById('months').textContent = months;  
-            document.getElementById('days').textContent = days;  
-            document.getElementById('hours').textContent = hours;  
-            // document.getElementById('minutes').textContent = minutes;  
-            // document.getElementById('seconds').textContent = seconds; 
-
-            if (distance < 0) {
-                clearInterval(countdownInterval);
-                timer.innerHTML = "The big day is here!";
+                document.getElementById('months').textContent = months;
+                document.getElementById('days').textContent = remainingDays;
+                document.getElementById('hours').textContent = hours;
+            } else {
+                // After the wedding day
+                countdownTitle.style.display = 'none'; // Hide countdown title
+                const daysSinceWedding = Math.floor(Math.abs(distance) / (1000 * 60 * 60 * 24));
+                countdownWrapper.innerHTML = `<p class='big-day-message'>${daysSinceWedding} days since we tied the knot!</p>`;
             }
         }
 
         const countdownInterval = setInterval(updateCountdown, 1000);
-        // Initial call to display the countdown immediately  
-        updateCountdown();
+        updateCountdown(); // Initial call to display the countdown immediately
 
         // Gallery Navigation
         document.addEventListener('DOMContentLoaded', function() {
